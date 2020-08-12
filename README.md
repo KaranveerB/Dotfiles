@@ -1,4 +1,4 @@
-# My dot files
+# My Dot Files
 
 ## ZSH
 - To make ZSH work, either move .zshenv to home directory or add `export ZDOTDIR=$HOME/.config/zsh` to `/etc/zsh/zshenv`
