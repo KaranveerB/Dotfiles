@@ -7,3 +7,6 @@
 [submodule ".dwm/dwmblocks"]
 	path = .dwm/dwmblocks
 	url = https://github.com/KaranveerB/dwmblocks
+[submodule ".dwm/dwm"]
+	path = .dwm/dwm
+	url = git@github.com:KaranveerB/dwm-config.git
