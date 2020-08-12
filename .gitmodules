@@ -1,0 +1,9 @@
+[submodule ".config/zsh/fzf/fzf"]
+	path = .config/zsh/fzf/fzf
+	url = https://github.com/junegunn/fzf
+[submodule ".config/zsh/oh-my-zsh"]
+	path = .config/zsh/oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh/
+[submodule ".dwm/dwmblocks"]
+	path = .dwm/dwmblocks
+	url = https://github.com/KaranveerB/dwmblocks
