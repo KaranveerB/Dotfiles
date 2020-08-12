@@ -1,0 +1,5 @@
+#!/bin/dash
+# Used to get delimiter on left side of status bar text
+# I'm too lazy to change the source code
+
+echo " "

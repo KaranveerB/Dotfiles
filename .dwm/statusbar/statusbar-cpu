@@ -1,0 +1,15 @@
+#!/bin/dash
+
+cpuu=`top -b -n1 | grep "Cpu(s)" | awk '{printf "%.1f%", $2 + $4}'`
+temp=`sensors | grep "Tctl" | awk '{printf "%.1f", $2}' `
+wholetemp=`printf "%.0f" $temp`
+
+if [ $wholetemp -ge 75 ]
+then
+	echo $cpuu $temp° 
+elif [ $wholetemp -lt 60 ]
+then
+	echo $cpuu $temp°
+else 
+	echo $cpuu $temp°
+fi

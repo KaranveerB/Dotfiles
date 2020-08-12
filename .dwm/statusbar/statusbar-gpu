@@ -1,0 +1,11 @@
+#!/bin/dash
+
+
+nvidia=$(nvidia-smi --format=csv,noheader --query-gpu=\
+	utilization.gpu,\
+	temperature.gpu,
+
+temp=awk
+usage=$(utilization.gpu)
+
+echo"$temp $usage"
