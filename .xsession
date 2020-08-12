@@ -1,7 +1,8 @@
 #!/bin/dash
 
-case "$GDMSESSION" in
+:' case "$GDMSESSION" in
 	dwm)
+'
 		# Restore bg
 		sh ~/.fehbg &
 
@@ -18,10 +19,11 @@ case "$GDMSESSION" in
 		# Start pulseeffects
 		pulseeffects --gapplication-service &> /dev/null &
 
-		;;
-:'	xmonad)
+:'		;;
+	xmonad)
 		standard_config
 		setxkbmap -option altwin:swap_alt_win
 		;;
-'
+
 	esac
+'
