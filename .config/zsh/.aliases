@@ -19,9 +19,6 @@ alias dwmm="
 ## dwmblocks
 alias dwmb="killall dwmblocks &>/dev/null; dwmblocks & disown"
 
-# KDE
-# alias resplasma="kquitapp5 plasmashell; kstart5 plasmashell"
-
 # less
 alias l="less"
 
