@@ -35,7 +35,3 @@ alias startpicom="picom --daemon --experimental-backend --backend glx"
 
 # python
 alias py="python"
-
-# Xresources
-alias xrdbm="xrdb -merge ~/.Xresources"
-

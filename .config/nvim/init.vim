@@ -10,11 +10,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
 
 " Fuzzy find
-Pulg '~/doc/zsh/fzf/fzf'
-
-" [Better] Syntax highlighting
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-
+Plug '~/.config/zsh/fzf/fzf'
 
 
 call plug#end()
