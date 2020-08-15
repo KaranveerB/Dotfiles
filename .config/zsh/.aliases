@@ -1,6 +1,3 @@
-# interactive sync (with dry run)
-# alias rclsync="sh /home/lost/.bash_scripts/smart_rclone_sync.sh"
-
 
 # clean make
 alias clm="make clean && sudo make install clean"
@@ -8,13 +5,13 @@ alias clm="make clean && sudo make install clean"
 # dwm
 ## dwm merge
 alias dwmm="
-	echo '-- merging attachaside --';
+	echo "-- merging attachaside --";
 	git merge attachaside -m attachaside;
-	echo '-- merging uselessgap --';
+	echo "-- merging uselessgap --";
 	git merge uselessgap -m uselessgap; 
-	echo '-- NOT merging cfacts --';
+	echo "-- NOT merging cfacts --";
 	# git merge cfacts -m cfacts;
-	echo '-- merging config --';
+	echo "-- merging config --";
 	git merge config -m config;"
 ## dwmblocks
 alias dwmb="killall dwmblocks &>/dev/null; dwmblocks & disown"
@@ -26,8 +23,12 @@ alias l="less"
 alias vim="nvim"
 
 # pacman
+unalias pacupg
+function pacupg() { sudo pacman -Syu && kill -36 $(pidof dwmblocks); }
 alias pacinl="grep -i installed /var/log/pacman.log"
 alias pacupgl="grep -i upgraded /var/log/pacman.log"
+alias pacrel="grep -i removed /var/log/pacman.log"
+alias pacreml="grep -i removed /var/log/pacman.log"
 
 # picom
 alias startpicom="picom --daemon --experimental-backend --backend glx"
