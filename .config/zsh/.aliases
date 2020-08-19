@@ -1,9 +1,10 @@
-
 # clean make
 alias clm="make clean && sudo make install clean"
 
-# dwm
-## dwm merge
+# dwmblocks
+alias dwmb="killall dwmblocks &>/dev/null; dwmblocks & disown"
+
+# dwm merge
 alias dwmm="
 	echo "-- merging attachaside --";
 	git merge attachaside -m attachaside;
@@ -13,8 +14,6 @@ alias dwmm="
 	# git merge cfacts -m cfacts;
 	echo "-- merging config --";
 	git merge config -m config;"
-## dwmblocks
-alias dwmb="killall dwmblocks &>/dev/null; dwmblocks & disown"
 
 # less
 alias l="less"
@@ -23,7 +22,7 @@ alias l="less"
 alias vim="nvim"
 
 # pacman
-unalias pacupg
+unalias pacupg # Set by arch plugin for zsh
 function pacupg() { sudo pacman -Syu && kill -36 $(pidof dwmblocks); }
 alias pacinl="grep -i installed /var/log/pacman.log"
 alias pacupgl="grep -i upgraded /var/log/pacman.log"
@@ -35,3 +34,23 @@ alias startpicom="picom --daemon --experimental-backend --backend glx"
 
 # python
 alias py="python"
+
+# termite
+alias t="termite -d $PWD &>/dev/null & disown"
+
+# change directory 
+alias cconf="cd ~/.config/"
+alias cdoc="cd ~/doc/"
+alias cdown="cd ~/down/"
+alias cnvim="cd ~/.config/nvim/"
+alias cpico="cd ~/.config/picom/"
+alias cproj="cd ~/proj/"
+alias cterm="cd ~/.config/termite/"
+alias czsh="cd ~/.config/zsh/"
+
+# modify files (alias names make less sense if you don't use vim)
+alias vali="$EDITOR ~/.config/zsh/.aliases"
+alias vpico="$EDITOR ~/.config/picom/picom.conf"
+alias vterm="$EDITOR ~/.config/termite/config"
+alias vzenv="$EDITOR ~/.config/zsh/.zshenv"
+alias vzrc="$EDITOR ~/.config/zsh/.zshrc"

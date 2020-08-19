@@ -126,5 +126,5 @@ source ~/.cache/wal/colors-tty.sh
 # Enable fuzzy finder
 [ -f ~/.config/zsh/fzf/fzf.zsh ] && source ~/.config/zsh/fzf/fzf.zsh
 
-# linux brew (idk what this does)
+# linux brew 
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
