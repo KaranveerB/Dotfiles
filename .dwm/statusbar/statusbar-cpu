@@ -7,9 +7,10 @@ wholetemp=`printf "%.0f" $temp`
 if [ $wholetemp -ge 75 ]
 then
 	echo $cpuu $temp° 
-elif [ $wholetemp -lt 60 ]
+elif [ $wholetemp -ge 60 ]
 then
-	echo $cpuu $temp°
-else 
 	echo $cpuu $temp°
+else 
+
+	echo $cpuu $temp°
 fi
