@@ -1,29 +1,24 @@
 #!/bin/dash
 
-:' case "$GDMSESSION" in
-	dwm)
-'
-		# Restore bg
-		sh ~/.fehbg &
+sh .fehbg
+picom --daemon --experimental-backend --backend glx &
 
-		# Swap modkey
-		setxkbmap -option altwin:swap_alt_win
-		
-		# Start dwmblocks
-		export PATH=/home/lost/.dwm/statusbar:$PATH
-		dwmblocks &
+# swap modkey
+setxkbmap -option altwin:swap_alt_win &
 
-		# Start picom
-		picom --daemon --experimental-backend --backend glx
+# start dwmblocks
+export PATH=/home/lost/.dwm/statusbar:$PATH &
+dwmblocks &
 
-		# Start pulseeffects
-		pulseeffects --gapplication-service &> /dev/null &
+# lightdm locking
+# light-locker --lock-on-suspend --lock-on-lid &
+xss-lock -- lock &
+xset dpms 600 &
 
-:'		;;
-	xmonad)
-		standard_config
-		setxkbmap -option altwin:swap_alt_win
-		;;
+deadd-notification-center &
 
-	esac
-'
+# my poor battery life
+# pulseeffects --gapplication-service &> /dev/null &
+
+
+xset r rate 450 60

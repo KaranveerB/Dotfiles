@@ -1,23 +1,24 @@
 #!/bin/dash
-# Warning: This script values hyper optimization over readability and conciseness 
-# Script only checks left channel for volume
 
 amixer sget Master | grep '\[off\]' > /dev/null && mute=1 || mute=0
-vol=$(amixer sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '>
+vol=$(amixer sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%')
 
-if [ $mute -eq 0 ]
+if [ $mute -eq 1 ]
 then
-        echo 婢 M$vol%
+	echo 婢M$vol%
 elif [ $vol -eq 0 ]
 then
-        echo 婢 $vol%
-elif [ $vol -ge 60 ]
+	echo 婢$vol%
+elif [ $vol -gt 40 ]
 then
-        echo 墳 $vol%
-elif [ $vol -ge 30 ]
+	echo 墳$vol%
+elif [ $vol -gt 20 ]
 then
-        echo 奔 $vol%
+	echo 奔$vol%
+elif [ $vol -gt 10 ]
+then
+	echo 奔$vol%
 elif [ $vol -ge 0 ]
 then
-        echo 奔 $vol%
+	echo 奄$vol%
 fi

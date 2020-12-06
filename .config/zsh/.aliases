@@ -6,13 +6,15 @@ alias dwmb="killall dwmblocks &>/dev/null; dwmblocks & disown"
 
 # dwm merge
 alias dwmm="
-	echo "-- merging attachaside --";
+	echo '-- merging attachaside --';
 	git merge attachaside -m attachaside;
-	echo "-- merging uselessgap --";
+	echo '-- merging cfacts --';
+	git merge cfacts -m cfacts;
+	echo '-- merging pertag --';
+	git merge pertag -m pertag;
+	echo '-- merging uselessgap --';
 	git merge uselessgap -m uselessgap; 
-	echo "-- NOT merging cfacts --";
-	# git merge cfacts -m cfacts;
-	echo "-- merging config --";
+	echo '-- merging config --';
 	git merge config -m config;"
 
 # less
@@ -20,6 +22,9 @@ alias l="less"
 
 # neovim
 alias vim="nvim"
+
+# nerd font
+alias nerd='firefox --new-window "https://www.nerdfonts.com/cheat-sheet"'
 
 # pacman
 unalias pacupg # Set by arch plugin for zsh
@@ -32,16 +37,38 @@ alias pacreml="grep -i removed /var/log/pacman.log"
 # picom
 alias startpicom="picom --daemon --experimental-backend --backend glx"
 
+# pulseeffects
+alias startpulseeffects="pulseeffects --gapplication-service & disown"
+
 # python
 alias py="python"
 
 # termite
-alias t="termite -d $PWD &>/dev/null & disown"
+function t() { termite -d $PWD & disown }
+
+# wifi
+alias wlman="sudo iw wlp1s0 set type managed"
+alias wlmon="sudo iw wlp1s0 set monitor none"
+alias wlup="sudo ip link set wlp1s0 up"
+alias wldown="sudo ip link set wlp1s0 down"
+
+# zplug
+alias zplugupg="
+	zplug install;
+	zplug update;
+	zplug load;
+	zplug clean;"
 
 # change directory 
 alias cconf="cd ~/.config/"
 alias cdoc="cd ~/doc/"
 alias cdown="cd ~/down/"
+alias cldm="cd /etc/lightdm/"
+alias cldmw="cd /usr/share/lightdm-webkit/themes/"
+alias cdwm="cd ~/.dwm/dwm/"
+alias cdwmb="cd ~/.dwm/dwmblocks/"
+alias cdwmd="cd ~/.dwm/"
+alias cdwms="cd ~/.dwm/statusbar/"
 alias cnvim="cd ~/.config/nvim/"
 alias cpico="cd ~/.config/picom/"
 alias cproj="cd ~/proj/"

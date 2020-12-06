@@ -1,4 +1,9 @@
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.config/zsh/oh-my-zsh"
@@ -7,8 +12,9 @@ export ZSH="$HOME/.config/zsh/oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster" 
-# Nice themes: gallois, 
+#ZSH_THEME="agnoster" 
+
+# Nice themes: agnoster, gallois, 
 # Nice external themes: typewritten, reggae theme, oxide, 
 # powerlevel10k << TRY THIS. Comes with interactive config wizard
 # bullet train, Pi, hyperzsh, spaceship, alien-minimal, drofloh, halil
@@ -49,7 +55,7 @@ export UPDATE_ZSH_DAYS=7
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+#COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -74,15 +80,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  alias-finder
+  # alias-finder
   archlinux
-  # dogesay  
   # emoji
-  # emoji-clock
   git
   # gitignore
-  history
-  # lol
+  # history
   # npm
   # pip
   safe-paste
@@ -94,7 +97,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+
 # User configuration
+
+# zplug
+source ~/.config/zsh/zplug/init.zsh
+zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
+zplug romkatv/powerlevel10k, as:theme, depth:1
+zplug load
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -118,13 +128,10 @@ source $HOME/.config/zsh/.aliases
 # bindkey -v
 
 # Import colorscheme from 'wal' asynchronously
-(cat ~/.cache/wal/sequences &)
-
-# Enable pywal on TTYs
-source ~/.cache/wal/colors-tty.sh
+# (cat ~/.cache/wal/sequences &)
 
 # Enable fuzzy finder
 [ -f ~/.config/zsh/fzf/fzf.zsh ] && source ~/.config/zsh/fzf/fzf.zsh
 
-# linux brew 
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
