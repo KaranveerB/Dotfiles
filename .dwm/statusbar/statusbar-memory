@@ -1,0 +1,18 @@
+#!/bin/dash
+
+output=$(free --mega)
+
+mem_usage=$(echo "$output" | awk 'FNR==2 { printf "%.2f", $3/1000 }')
+swap_usage=$(echo "$output" | awk 'FNR==3 { printf "%.2f", $3/1000 }')
+
+if [  $swap_usage = "0.00" ]
+then
+	echo "${mem_usage}G/7.7G"
+else
+	if [ $(echo "$swap_usage 0.50" | awk '{print ($1 < $2)}') -eq 1]
+	then
+		echo "${mem_usage}G+${swap_usage}G/14.14G"
+	else
+		echo "${mem_usage}G/7.7G"
+	fi
+fi
