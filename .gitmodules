@@ -1,3 +1,9 @@
 [submodule ".config/zsh/zplug"]
 	path = .config/zsh/zplug
 	url = https://github.com/zplug/zplug
+[submodule "https://github.com/zplug/zplug"]
+	url = .config/zsh/zplug
+[submodule "https://github.com/ohmyzsh/ohmyzsh"]
+	url = .config/zsh/oh-my-zsh
+[submodule "https://github.com/KaranveerB/dwm-config"]
+	url = .dwm/dwm

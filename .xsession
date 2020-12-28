@@ -1,4 +1,7 @@
 #!/bin/dash
+# load zshenv. Needed for dwmblocks
+export PATH=/home/lost/local/bin/statusbar:$PATH # Set in .xsession (before dwmblocks starts)
+export PATH=/home/lost/.dwm/statusbar:$PATH # Fix android studio problems
 
 sh .fehbg
 picom --daemon --experimental-backend --backend glx &
@@ -7,7 +10,6 @@ picom --daemon --experimental-backend --backend glx &
 setxkbmap -option altwin:swap_alt_win &
 
 # start dwmblocks
-export PATH=/home/lost/.dwm/statusbar:$PATH &
 dwmblocks &
 
 # lightdm locking
@@ -21,4 +23,7 @@ deadd-notification-center &
 # pulseeffects --gapplication-service &> /dev/null &
 
 
-xset r rate 450 60
+# preferences 
+xset r rate 450 60 &
+amixer -q set Master 0 && kill -35 $(pidof dwmblocks) &> /dev/null &
+
