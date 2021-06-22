@@ -32,11 +32,11 @@
         "blocklist": "",
         "plugins_order": [
             "limiter",
+            "autogain",
+            "bass_enhancer",
             "equalizer",
             "convolver",
             "compressor",
-            "bass_enhancer",
-            "autogain",
             "gate",
             "multiband_compressor",
             "multiband_gate",
@@ -50,19 +50,20 @@
             "loudness",
             "maximizer",
             "filter",
-            "pitch"
+            "pitch",
+            "rnnoise"
         ],
         "bass_enhancer": {
             "state": "false",
             "input-gain": "0",
             "output-gain": "0",
-            "amount": "5",
+            "amount": "1.0000000000000009",
             "harmonics": "7.0000000000000053",
             "scope": "100",
             "floor": "20",
-            "blend": "2",
+            "blend": "4",
             "floor-active": "false",
-            "listen": "false"
+            "listen": "true"
         },
         "compressor": {
             "state": "false",
@@ -116,7 +117,7 @@
             "mode": "FFT",
             "num-bands": "30",
             "input-gain": "0",
-            "output-gain": "0",
+            "output-gain": "-0.29999999999999999",
             "split-channels": "false",
             "left": {
                 "band0": {
@@ -857,6 +858,7 @@
             "state": "false",
             "fft": "4096",
             "std": "ISO226-2003",
+            "input": "0",
             "volume": "0"
         },
         "multiband_gate": {
@@ -1016,15 +1018,15 @@
             }
         },
         "autogain": {
-            "state": "false",
+            "state": "true",
             "detect-silence": "true",
             "use-geometric-mean": "false",
             "input-gain": "0",
-            "output-gain": "-5",
+            "output-gain": "-0.29999999999999999",
             "target": "-13",
             "weight-m": "1",
             "weight-s": "1",
-            "weight-i": "7"
+            "weight-i": "5"
         },
         "delay": {
             "state": "false",
@@ -1032,6 +1034,12 @@
             "output-gain": "0",
             "time-l": "0",
             "time-r": "0"
+        },
+        "rnnoise": {
+            "state": "false",
+            "input-gain": "0",
+            "output-gain": "0",
+            "model-path": ""
         }
     }
 }

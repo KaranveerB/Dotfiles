@@ -4,6 +4,7 @@ export PATH=/home/lost/local/bin/statusbar:$PATH # Set in .xsession (before dwmb
 export PATH=/home/lost/.dwm/statusbar:$PATH # Fix android studio problems
 
 sh .fehbg
+#xwinwrap -ov -ni -fs -un -g 1920x1080+0+0 -- mpv ~/.wallpapers/snow_fall.mp4  --loop --no-audio --no-input-default-bindings -wid WID &
 picom --daemon --experimental-backend --backend glx &
 
 # swap modkey
@@ -18,12 +19,19 @@ xss-lock -- lock &
 xset dpms 600 &
 
 deadd-notification-center &
+# dunst
 
 # my poor battery life
 # pulseeffects --gapplication-service &> /dev/null &
 
+# redshift
+redshift -l 49:-123 & 
 
 # preferences 
 xset r rate 450 60 &
 amixer -q set Master 0 && kill -35 $(pidof dwmblocks) &> /dev/null &
 
+unclutter --timeout 20 &
+
+# fix intellij/intellij derivaties
+export _JAVA_AWT_WM_NONREPARENTING=1

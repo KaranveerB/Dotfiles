@@ -1,6 +1,16 @@
+# vim:foldmethod=marker
+
+# HOT FIX
+alias fix-bluetooth="pactl set-default-sink bluez_input.E8:07:BF:A9:2C:AB.a2dp-sink"
+alias fixbl="pactl set-default-sink bluez_input.E8:07:BF:A9:2C:AB.a2dp-sink"
+
+# barrier
+alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
+
 # clean make
 alias clm="make clean && sudo make install clean"
 
+# {{{ dwm
 # dwmblocks
 alias dwmb="killall dwmblocks &>/dev/null; dwmblocks & disown"
 
@@ -16,6 +26,18 @@ alias dwmm="
 	git merge uselessgap -m uselessgap; 
 	echo '-- merging config --';
 	git merge config -m config;"
+# }}}
+
+#g++
+# # quick g++ for testing
+function qg++() { g++ -std=c++11 $1 -o output.out && ./output.out}
+
+# git
+alias gcamsg="git add * && git commit -m commit"
+
+# kitty
+alias kit="kitty +kitten"
+
 
 # less
 alias l="less"
@@ -26,10 +48,10 @@ alias vim="nvim"
 # nerd font
 alias nerd='firefox --new-window "https://www.nerdfonts.com/cheat-sheet"'
 
-# pacman
+# {{{ pacman
 ## acts as extension to "arch" plugin for zsh
 unalias pacupg # Set by arch plugin for zsh
-function pacupg() { sudo pacman -Syu && kill -36 $(pidof dwmblocks); }
+function pacupg() { arch-upgrade && kill -36 $(pidof dwmblocks); }
 alias pacq="pacman -Q"
 alias pacqq="pacman -Qq"
 alias pacqi="pacman -Qi"
@@ -37,6 +59,10 @@ alias pacinl="grep -i installed /var/log/pacman.log"
 alias pacupgl="grep -i upgraded /var/log/pacman.log"
 alias pacrel="grep -i removed /var/log/pacman.log"
 alias pacreml="grep -i removed /var/log/pacman.log"
+# }}}
+
+# picoctf
+alias clearpico="rm -rf ~/dc/ctf/pico/*"
 
 # picom
 alias startpicom="picom --daemon --experimental-backend --backend glx"
@@ -47,25 +73,34 @@ alias startpulseeffects="pulseeffects --gapplication-service & disown"
 # python
 alias py="python"
 
-# termite
-function t() { termite -d $PWD & disown }
+# terminal
+function t() { kitty -d=$PWD & disown }
 
-# wifi
+# translate
+alias gtfr="trans -t fr"
+alias gtjp="trans -t ja"
+
+# {{{ wifi
 alias wlman="sudo iw wlp1s0 set type managed"
 alias wlmon="sudo iw wlp1s0 set monitor none"
 alias wlup="sudo ip link set wlp1s0 up"
 alias wldown="sudo ip link set wlp1s0 down"
+# }}}
 
-# zplug
+# x
+alias xrdbm='xrdb -merge ~/.Xresources'
+
+# {{{ zplug
 alias zplugupg="
 	zplug install;
 	zplug update;
 	zplug load;
 	zplug clean;"
+# }}}
 
-# change directory 
+# {{{ change directory 
 alias cconf="cd ~/.config/"
-alias cdoc="cd ~/doc/"
+alias cdoc="cd ~/dc/"
 alias cdown="cd ~/down/"
 alias cldm="cd /etc/lightdm/"
 alias cldmw="cd /usr/share/lightdm-webkit/themes/"
@@ -75,13 +110,20 @@ alias cdwmd="cd ~/.dwm/"
 alias cdwms="cd ~/.dwm/statusbar/"
 alias cnvim="cd ~/.config/nvim/"
 alias cpico="cd ~/.config/picom/"
+alias cpicoctf="cd ~/dc/ctf/pico/"
+alias cpoly="cd ~/.config/polybar/"
 alias cproj="cd ~/proj/"
-alias cterm="cd ~/.config/termite/"
+alias cterm="cd ~/.config/kitty/"
 alias czsh="cd ~/.config/zsh/"
+# }}}
 
-# modify files (alias names make less sense if you don't use vim)
+# {{{ configuration
+# (alias names make less sense if you don't use vim)
 alias vali="$EDITOR ~/.config/zsh/.aliases"
+alias vpoly="$EDITOR ~/.config/polybar/"
 alias vpico="$EDITOR ~/.config/picom/picom.conf"
-alias vterm="$EDITOR ~/.config/termite/config"
+alias vterm="$EDITOR ~/.config/kitty/kitty.conf"
+alias vvim="$EDITOR ~/.config/nvim/init.vim"
 alias vzenv="$EDITOR ~/.config/zsh/.zshenv"
 alias vzrc="$EDITOR ~/.config/zsh/.zshrc"
+# }}}

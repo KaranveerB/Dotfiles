@@ -1,3 +1,5 @@
+# vim:foldmethod=marker
+
 [options]
 allow_bold = true
 #audible_bell = false
