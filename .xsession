@@ -1,7 +1,7 @@
 #!/bin/dash
 # load zshenv. Needed for dwmblocks
-export PATH=/home/lost/local/bin/statusbar:$PATH # Set in .xsession (before dwmblocks starts)
-export PATH=/home/lost/.dwm/statusbar:$PATH # Fix android studio problems
+#export PATH=/home/lost/local/bin/statusbar:$PATH # Set in .xsession (before dwmblocks starts)
+#export PATH=/home/lost/.dwm/statusbar:$PATH # Fix android studio problems
 
 sh .fehbg
 #xwinwrap -ov -ni -fs -un -g 1920x1080+0+0 -- mpv ~/.wallpapers/snow_fall.mp4  --loop --no-audio --no-input-default-bindings -wid WID &
@@ -11,12 +11,12 @@ picom --daemon --experimental-backend --backend glx &
 setxkbmap -option altwin:swap_alt_win &
 
 # start dwmblocks
-dwmblocks &
+#dwmblocks &
 
 # lightdm locking
 # light-locker --lock-on-suspend --lock-on-lid &
-xss-lock -- lock &
-xset dpms 600 &
+xset +dpms s 0 5 &
+xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 
 deadd-notification-center &
 # dunst
@@ -32,6 +32,8 @@ xset r rate 450 60 &
 amixer -q set Master 0 && kill -35 $(pidof dwmblocks) &> /dev/null &
 
 unclutter --timeout 20 &
+
+fcitx5 &> /dev/null &
 
 # fix intellij/intellij derivaties
 export _JAVA_AWT_WM_NONREPARENTING=1

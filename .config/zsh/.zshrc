@@ -82,6 +82,9 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   # alias-finder
   archlinux
+  copydir
+  copyfile
+  dirhistory
   # emoji
   git
   # gitignore
@@ -92,7 +95,6 @@ plugins=(
   # systemd
   z
   zsh-interactive-cd
-  zsh_reload
 )
 
 source $ZSH/oh-my-zsh.sh

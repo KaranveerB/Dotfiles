@@ -1,4 +1,5 @@
 # vim:foldmethod=marker
+# vim:filetype=zsh
 
 # HOT FIX
 alias fix-bluetooth="pactl set-default-sink bluez_input.E8:07:BF:A9:2C:AB.a2dp-sink"
@@ -6,6 +7,9 @@ alias fixbl="pactl set-default-sink bluez_input.E8:07:BF:A9:2C:AB.a2dp-sink"
 
 # barrier
 alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
+
+# bluetoothctl
+alias blacon="bluetoothctl power on && bluetoothctl connect" # meant to be used with tab completion
 
 # clean make
 alias clm="make clean && sudo make install clean"
@@ -51,7 +55,8 @@ alias nerd='firefox --new-window "https://www.nerdfonts.com/cheat-sheet"'
 # {{{ pacman
 ## acts as extension to "arch" plugin for zsh
 unalias pacupg # Set by arch plugin for zsh
-function pacupg() { arch-upgrade && kill -36 $(pidof dwmblocks); }
+#function pacupg() { arch-upgrade && kill -36 $(pidof dwmblocks); }
+function pacupg() { arch-upgrade && polyhook packages}
 alias pacq="pacman -Q"
 alias pacqq="pacman -Qq"
 alias pacqi="pacman -Qi"
@@ -67,11 +72,30 @@ alias clearpico="rm -rf ~/dc/ctf/pico/*"
 # picom
 alias startpicom="picom --daemon --experimental-backend --backend glx"
 
+# pipe-viewer
+alias pv="pipe-viewer --audio"
+
+# {{{ polybar
+function polyhook() { 
+	if [ $# -eq 1 ]; then
+		polybar-msg hook $1 1 > /dev/null 2>&1
+	elif [ $# -eq 2 ]; then
+		polybar-msg hook $1 $2 > /dev/null 2>&1
+	else
+		echo "Invalid number of arguments for polyhook()"
+	fi
+}
+alias startpoly="sh ~/.config/polybar/launch.sh"
+# }}}}
+
 # pulseeffects
 alias startpulseeffects="pulseeffects --gapplication-service & disown"
 
 # python
 alias py="python"
+
+# systemd
+alias disablelid="echo 'Ctrl+C to re-enable sleep on lid close' && systemd-inhibit --what=handle-lid-switch sleep 1d"
 
 # terminal
 function t() { kitty -d=$PWD & disown }
@@ -87,7 +111,7 @@ alias wlup="sudo ip link set wlp1s0 up"
 alias wldown="sudo ip link set wlp1s0 down"
 # }}}
 
-# x
+
 alias xrdbm='xrdb -merge ~/.Xresources'
 
 # {{{ zplug
@@ -108,11 +132,13 @@ alias cdwm="cd ~/.dwm/dwm/"
 alias cdwmb="cd ~/.dwm/dwmblocks/"
 alias cdwmd="cd ~/.dwm/"
 alias cdwms="cd ~/.dwm/statusbar/"
-alias cnvim="cd ~/.config/nvim/"
+alias cvim="cd ~/.config/nvim/"
 alias cpico="cd ~/.config/picom/"
 alias cpicoctf="cd ~/dc/ctf/pico/"
 alias cpoly="cd ~/.config/polybar/"
 alias cproj="cd ~/proj/"
+alias csch="cd ~/sch/"
+alias ctb="cd ~/sch/tb/"
 alias cterm="cd ~/.config/kitty/"
 alias czsh="cd ~/.config/zsh/"
 # }}}
@@ -123,7 +149,7 @@ alias vali="$EDITOR ~/.config/zsh/.aliases"
 alias vpoly="$EDITOR ~/.config/polybar/"
 alias vpico="$EDITOR ~/.config/picom/picom.conf"
 alias vterm="$EDITOR ~/.config/kitty/kitty.conf"
-alias vvim="$EDITOR ~/.config/nvim/init.vim"
+alias vvim="$EDITOR ~/.config/nvim/"
 alias vzenv="$EDITOR ~/.config/zsh/.zshenv"
 alias vzrc="$EDITOR ~/.config/zsh/.zshrc"
 # }}}
