@@ -15,7 +15,7 @@ setxkbmap -option altwin:swap_alt_win &
 
 # lightdm locking
 # light-locker --lock-on-suspend --lock-on-lid &
-xset +dpms s 0 5 &
+xset +dpms s 0 5 & # change back to 5 at some point or some other value
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 
 deadd-notification-center &

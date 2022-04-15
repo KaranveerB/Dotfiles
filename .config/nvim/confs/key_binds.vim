@@ -10,4 +10,4 @@ inoremap <A-k> <C-O>gk
 inoremap <A-l> <C-O>l
 
 " coc autocomplete
-inoremap <expr> <Enter> pumvisible() ? coc#_select_confirm() : "<Enter>"
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"

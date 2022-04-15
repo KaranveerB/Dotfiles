@@ -82,7 +82,7 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   # alias-finder
   archlinux
-  copydir
+  #copydir
   copyfile
   dirhistory
   # emoji
@@ -94,7 +94,7 @@ plugins=(
   safe-paste
   # systemd
   z
-  zsh-interactive-cd
+  #zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh

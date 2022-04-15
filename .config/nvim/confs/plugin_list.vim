@@ -11,7 +11,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ghifarit53/tokyonight-vim'
 
 " Better syntax highlighting
-"Plug 'arakashic/chromatica.nvim'
+Plug 'arakashic/chromatica.nvim'
 
 " Shebang highlighting
 Plug 'vitalk/vim-shebang'
@@ -29,5 +29,8 @@ Plug 'lambdalisue/suda.vim'
 " 	polyglot causing problems with filetype detections
 " Plug 'sheerun/vim-polyglot'
 " Plug 'cespare/vim-toml'
+
+" Copilot
+Plug 'github/copilot.vim'
 
 call plug#end()

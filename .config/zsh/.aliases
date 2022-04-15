@@ -1,15 +1,23 @@
 # vim:foldmethod=marker
 # vim:filetype=zsh
 
+# TMP RCLONE
+alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode writes"
+# TODO: this is crap. Do something about it later. Likely polybar stuff mixed with dwm commands and rofi.
+
+
 # HOT FIX
-alias fix-bluetooth="pactl set-default-sink bluez_input.E8:07:BF:A9:2C:AB.a2dp-sink"
-alias fixbl="pactl set-default-sink bluez_input.E8:07:BF:A9:2C:AB.a2dp-sink"
+alias fix-bluetooth="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
+alias fix-bl="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
+alias resbl="sudo systemctl restart bluetotoh"
 
 # barrier
 alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
 
 # bluetoothctl
 alias blacon="bluetoothctl power on && bluetoothctl connect" # meant to be used with tab completion
+alias blctl="bluetoothctl"
+alias blup="bluetoothctl power on"
 
 # clean make
 alias clm="make clean && sudo make install clean"
@@ -20,27 +28,35 @@ alias dwmb="killall dwmblocks &>/dev/null; dwmblocks & disown"
 
 # dwm merge
 alias dwmm="
-	echo '-- merging attachaside --';
-	git merge attachaside -m attachaside;
+	echo '-- merging theme: tokyo-night --'
+	git merge theme-tokyo-night -m 'theme: tokyo-night'
 	echo '-- merging cfacts --';
 	git merge cfacts -m cfacts;
 	echo '-- merging pertag --';
 	git merge pertag -m pertag;
 	echo '-- merging uselessgap --';
 	git merge uselessgap -m uselessgap; 
+	echo '-- merging dwm-ipc-anybar --';
+	git merge dwm-ipc-anybar -m dwm-ipc-anybar;
+	echo '-!! CAREFUL OF CLOSING BRACKET WHEN FIXING GIT CONFLICTS !!-';
 	echo '-- merging config --';
 	git merge config -m config;"
 # }}}
 
 #g++
-# # quick g++ for testing
+# # quick g++/gcc for testing
 function qg++() { g++ -std=c++11 $1 -o output.out && ./output.out}
+function qgcc() { gcc -std=c99 $1 -o output.out && ./output.out}
 
 # git
 alias gcamsg="git add * && git commit -m commit"
 
 # kitty
 alias kit="kitty +kitten"
+#if [ "$TERM" = "xterm-kitty" ]; then alias ssh="kitty +kitten ssh"; fi
+# specifically checked cus if you kitty ssh when you should ssh, you're gonna have a bad time
+
+function t() { kitty -d=$PWD & disown }
 
 
 # less
@@ -94,15 +110,18 @@ alias startpulseeffects="pulseeffects --gapplication-service & disown"
 # python
 alias py="python"
 
+# suspend interrupt
+alias inhibitsleep="systemd-inhibit --what=handle-lid-switch sleep 1d"
+
 # systemd
 alias disablelid="echo 'Ctrl+C to re-enable sleep on lid close' && systemd-inhibit --what=handle-lid-switch sleep 1d"
-
-# terminal
-function t() { kitty -d=$PWD & disown }
 
 # translate
 alias gtfr="trans -t fr"
 alias gtjp="trans -t ja"
+
+# valgrind
+alias qvalgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s "
 
 # {{{ wifi
 alias wlman="sudo iw wlp1s0 set type managed"
@@ -111,7 +130,13 @@ alias wlup="sudo ip link set wlp1s0 up"
 alias wldown="sudo ip link set wlp1s0 down"
 # }}}
 
+# wine
+alias jwine="LANG=ja_JP.UTF-8 wine"
 
+# xclip
+alias sysclip="xclip -selection c"
+ 
+# xrdb
 alias xrdbm='xrdb -merge ~/.Xresources'
 
 # {{{ zplug

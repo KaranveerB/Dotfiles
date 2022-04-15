@@ -7,6 +7,7 @@ set relativenumber
 set number
 set ruler
 set breakindent
+set wrap linebreak
 
 " tabs
 set showtabline=0  " show tabline
