@@ -29,7 +29,7 @@ redshift -l 49:-123 &
 
 # preferences 
 xset r rate 450 60 &
-amixer -q set Master 0 && kill -35 $(pidof dwmblocks) &> /dev/null &
+pamixer --set-volume 0
 
 unclutter --timeout 20 &
 

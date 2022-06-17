@@ -10,6 +10,7 @@ alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode writ
 alias fix-bluetooth="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
 alias fix-bl="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
 alias resbl="sudo systemctl restart bluetotoh"
+alias resaltswap="setxkbmap -option altwin:swap_alt_win &"
 
 # barrier
 alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
@@ -63,6 +64,7 @@ function t() { kitty -d=$PWD & disown }
 alias l="less"
 
 # neovim
+alias vi="nvim"
 alias vim="nvim"
 
 # nerd font
