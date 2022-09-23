@@ -2,8 +2,9 @@
 # vim:filetype=zsh
 
 # TMP RCLONE
-alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode writes"
+alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode writes --verbose"
 # TODO: this is crap. Do something about it later. Likely polybar stuff mixed with dwm commands and rofi.
+# The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
 
 
 # HOT FIX

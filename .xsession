@@ -3,12 +3,12 @@
 #export PATH=/home/lost/local/bin/statusbar:$PATH # Set in .xsession (before dwmblocks starts)
 #export PATH=/home/lost/.dwm/statusbar:$PATH # Fix android studio problems
 
+# swap modkey
+setxkbmap -option altwin:swap_alt_win &
+
 sh .fehbg
 #xwinwrap -ov -ni -fs -un -g 1920x1080+0+0 -- mpv ~/.wallpapers/snow_fall.mp4  --loop --no-audio --no-input-default-bindings -wid WID &
 picom --daemon --experimental-backend --backend glx &
-
-# swap modkey
-setxkbmap -option altwin:swap_alt_win &
 
 # start dwmblocks
 #dwmblocks &

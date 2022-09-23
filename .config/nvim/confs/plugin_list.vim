@@ -29,6 +29,7 @@ Plug 'lambdalisue/suda.vim'
 " 	polyglot causing problems with filetype detections
 " Plug 'sheerun/vim-polyglot'
 " Plug 'cespare/vim-toml'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Copilot
 Plug 'github/copilot.vim'

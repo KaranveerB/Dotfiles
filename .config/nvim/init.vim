@@ -9,3 +9,4 @@ source ~/.config/nvim/confs/themes/tokyo_night.vim
 " -------- settings ---------
 source ~/.config/nvim/confs/ui.vim 
 source ~/.config/nvim/confs/key_binds.vim
+source ~/.config/nvim/confs/behaviour.vim
