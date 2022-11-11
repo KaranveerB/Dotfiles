@@ -23,6 +23,5 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
   },
-  suggest_enablePreselect = true,
 }
 EOF

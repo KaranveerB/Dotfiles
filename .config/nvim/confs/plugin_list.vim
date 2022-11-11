@@ -11,7 +11,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ghifarit53/tokyonight-vim'
 
 " Better syntax highlighting
-Plug 'arakashic/chromatica.nvim'
+"Plug 'arakashic/chromatica.nvim'
 
 " Shebang highlighting
 Plug 'vitalk/vim-shebang'
@@ -32,6 +32,9 @@ Plug 'lambdalisue/suda.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Copilot
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
+
+" local configs
+Plug 'embear/vim-localvimrc'
 
 call plug#end()

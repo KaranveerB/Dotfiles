@@ -137,3 +137,6 @@ source $HOME/.config/zsh/.aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# enable extra goodies for fuchsia
+[[ ! -f ~/fuchsia/scripts/fx-env.sh ]] || source ~/fuchsia/scripts/fx-env.sh

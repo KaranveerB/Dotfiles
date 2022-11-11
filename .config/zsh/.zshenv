@@ -14,3 +14,4 @@ export PATH=$HOME/.dwm/statusbar:$PATH
 export PATH=/opt/:$PATH
 export PATH=$HOME/local/bin/statusbar:$PATH # Set in .xsession (before dwmblocks starts)
 export PATH=$HOME/.dwm/statusbar:$PATH
+export PATH="/home/lost/fuchsia/.jiri_root/bin:$PATH"

@@ -6,12 +6,13 @@ alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode writ
 # TODO: this is crap. Do something about it later. Likely polybar stuff mixed with dwm commands and rofi.
 # The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
 
-
 # HOT FIX
 alias fix-bluetooth="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
 alias fix-bl="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
-alias resbl="sudo systemctl restart bluetotoh"
+alias resbl="sudo systemctl restart bluetooth"
 alias resaltswap="setxkbmap -option altwin:swap_alt_win &"
+alias enablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 headset-head-unit"
+alias disablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 a2dp-sink-aac"
 
 # barrier
 alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
@@ -118,10 +119,6 @@ alias inhibitsleep="systemd-inhibit --what=handle-lid-switch sleep 1d"
 
 # systemd
 alias disablelid="echo 'Ctrl+C to re-enable sleep on lid close' && systemd-inhibit --what=handle-lid-switch sleep 1d"
-
-# translate
-alias gtfr="trans -t fr"
-alias gtjp="trans -t ja"
 
 # valgrind
 alias qvalgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s "

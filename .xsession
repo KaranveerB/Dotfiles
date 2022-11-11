@@ -25,7 +25,7 @@ deadd-notification-center &
 # pulseeffects --gapplication-service &> /dev/null &
 
 # redshift
-redshift -l 49:-123 & 
+#redshift -l 49:-123 & 
 
 # preferences 
 xset r rate 450 60 &
