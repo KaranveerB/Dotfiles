@@ -15,3 +15,5 @@ export PATH=/opt/:$PATH
 export PATH=$HOME/local/bin/statusbar:$PATH # Set in .xsession (before dwmblocks starts)
 export PATH=$HOME/.dwm/statusbar:$PATH
 export PATH="/home/lost/fuchsia/.jiri_root/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/default-runtime"
+export npm_config_prefix="$HOME/.local"

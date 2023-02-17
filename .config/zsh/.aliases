@@ -48,8 +48,9 @@ alias dwmm="
 
 #g++
 # # quick g++/gcc for testing
-function qg++() { g++ -std=c++11 $1 -o output.out && ./output.out}
-function qgcc() { gcc -std=c99 $1 -o output.out && ./output.out}
+function qg++() { g++ -std=c++11 $1 -o output.out && ./output.out }
+function qgcc() { gcc -std=c99 $1 -o output.out && ./output.out }
+function qhs() { ghc -dynamic $1 -o output.out && ./output.out }
 
 # git
 alias gcamsg="git add * && git commit -m commit"

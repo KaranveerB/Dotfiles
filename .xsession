@@ -3,6 +3,8 @@
 #export PATH=/home/lost/local/bin/statusbar:$PATH # Set in .xsession (before dwmblocks starts)
 #export PATH=/home/lost/.dwm/statusbar:$PATH # Fix android studio problems
 
+xrdb -merge ~/.Xresources
+
 # swap modkey
 setxkbmap -option altwin:swap_alt_win &
 
