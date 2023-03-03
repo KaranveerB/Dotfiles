@@ -134,7 +134,7 @@ secondary-layout-symbol = [M]
 ; label-title = %title%
 ; label-title-padding = 2
 ; label-title-foreground = ${colors.primary}
-; label-title-maxlen = 30
+; label-title-maxlen = 20
 
 ; Symbol of current layout
 ; Available tokens:
@@ -206,7 +206,7 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 5
+interval = 15
 
 format = <ramp-load> <label>
 
@@ -225,7 +225,7 @@ label = %percentage%%
 
 [module/memory]
 type = internal/memory
-interval = 5
+interval = 15
 
 format = <ramp-used> <label>
 
@@ -244,14 +244,16 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp1s0
-interval = 10.0
+interface = wlp166s0
+interval = 60
 
+#format-connected = <ramp-signal>
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
 
 format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
+#format-disconnected-underline = ${self.format-connected-underline}
+#label-disconnected = 
 label-disconnected =  Disconnected
 label-disconnected-foreground = ${colors.red}
 
@@ -268,12 +270,13 @@ ramp-signal-4-foreground = ${colors.green}
 
 [module/date]
 type = internal/date
-interval = 1
+interval = 10
 
 date = " %a, %Y/%m/%d"
 ;date-alt = " %Y-%m-%d"
 
-time = "%T"
+time = %H:%M
+;time = "%T"
 ;time-alt = %H:%M:%S
 
 format-prefix = 
@@ -334,7 +337,7 @@ full-at = 98
 low-at = 0
 ; low-at = 0 fixes battery getting stuck at 11% and not going lower
 time-format = %H:%M
-interval = 5
+interval = 30
 
 label-discharging = %percentage%% (%time%)
 label-charging = %percentage%% (%time%)
@@ -370,7 +373,7 @@ animation-charging-framerate = 500
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 90
-interval = 20
+interval = 45
 
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
@@ -394,7 +397,7 @@ ramp-4-foreground = ${colors.red}
 type = custom/ipc
 hook-0 = statusbar-package
 initial = 1
-#interval = 3600
+interval = 3600
 format-prefix =   
 ;Box in fontawesome
 

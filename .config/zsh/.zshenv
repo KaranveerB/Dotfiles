@@ -19,3 +19,7 @@ export PATH="/home/lost/fuchsia/.jiri_root/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/default-runtime"
 export npm_config_prefix="$HOME/.local"
 export GPG_TTY=$(tty)
+
+if [ $XDG_SESSION_TYPE = "wayland" ]; then
+    export MOZ_ENABLE_WAYLAND=1
+fi

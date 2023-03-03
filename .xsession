@@ -10,7 +10,7 @@ setxkbmap -option altwin:swap_alt_win &
 
 sh .fehbg
 #xwinwrap -ov -ni -fs -un -g 1920x1080+0+0 -- mpv ~/.wallpapers/snow_fall.mp4  --loop --no-audio --no-input-default-bindings -wid WID &
-picom --daemon --experimental-backend --backend glx &
+#picom --daemon --backend glx &
 
 # start dwmblocks
 #dwmblocks &
@@ -20,7 +20,7 @@ picom --daemon --experimental-backend --backend glx &
 xset +dpms s 0 5 & # change back to 5 at some point or some other value
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 
-deadd-notification-center &
+#deadd-notification-center &
 # dunst
 
 # my poor battery life

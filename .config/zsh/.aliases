@@ -2,7 +2,7 @@
 # vim:filetype=zsh
 
 # TMP RCLONE
-alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode writes --verbose"
+alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m"
 # TODO: this is crap. Do something about it later. Likely polybar stuff mixed with dwm commands and rofi.
 # The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
 
@@ -91,7 +91,7 @@ alias pacreml="grep -i removed /var/log/pacman.log"
 alias clearpico="rm -rf ~/dc/ctf/pico/*"
 
 # picom
-alias startpicom="picom --daemon --experimental-backend --backend glx"
+alias startpicom="picom --daemon --backend glx"
 
 # pipe-viewer
 alias pv="pipe-viewer --audio"
