@@ -5,8 +5,8 @@
 
 xrdb -merge ~/.Xresources
 
-# swap modkey
-setxkbmap -option altwin:swap_alt_win &
+# swap modkey --- moved to xorg config
+#setxkbmap -option altwin:swap_alt_win &
 
 sh .fehbg
 #xwinwrap -ov -ni -fs -un -g 1920x1080+0+0 -- mpv ~/.wallpapers/snow_fall.mp4  --loop --no-audio --no-input-default-bindings -wid WID &
@@ -17,10 +17,10 @@ sh .fehbg
 
 # lightdm locking
 # light-locker --lock-on-suspend --lock-on-lid &
-xset +dpms s 0 5 & # change back to 5 at some point or some other value
+xset +dpms s 0 0 & # change back to 5 at some point or some other value
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 
-#deadd-notification-center &
+deadd-notification-center &
 # dunst
 
 # my poor battery life
@@ -30,7 +30,7 @@ xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 #redshift -l 49:-123 & 
 
 # preferences 
-xset r rate 450 60 &
+xset r rate 450 60 & # move to xorg config once they get their stuff together
 pamixer --set-volume 0
 
 unclutter --timeout 20 &

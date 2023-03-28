@@ -335,9 +335,10 @@ battery = BAT1
 adapter = ADP0
 full-at = 98
 low-at = 0
-; low-at = 0 fixes battery getting stuck at 11% and not going lower
+#low-at = 0 fixes battery getting stuck at 11% and not going lower
 time-format = %H:%M
-interval = 30
+#interval = 30
+interval = 5
 
 label-discharging = %percentage%% (%time%)
 label-charging = %percentage%% (%time%)

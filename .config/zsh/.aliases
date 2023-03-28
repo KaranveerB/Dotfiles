@@ -41,7 +41,7 @@ alias dwmm="
 	git merge uselessgap -m uselessgap; 
 	echo '-- merging dwm-ipc-anybar --';
 	git merge dwm-ipc-anybar -m dwm-ipc-anybar;
-	echo '-!! CAREFUL OF CLOSING BRACKET WHEN FIXING GIT CONFLICTS !!-';
+	echo '--!! CAREFUL OF CLOSING BRACKET WHEN FIXING GIT CONFLICTS !!--';
 	echo '-- merging config --';
 	git merge config -m config;"
 # }}}
