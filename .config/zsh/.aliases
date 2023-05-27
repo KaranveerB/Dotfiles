@@ -13,6 +13,7 @@ alias resbl="sudo systemctl restart bluetooth"
 alias resaltswap="setxkbmap -option altwin:swap_alt_win &"
 alias enablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 headset-head-unit"
 alias disablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 a2dp-sink-aac"
+alias resxset="xset r rate 450 60"
 
 # barrier
 alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
