@@ -32,6 +32,7 @@ sync "/etc/X11/" "xorg.conf.d"
 sync "/etc/pam.d/" "system-auth"
 sync "/etc/pam.d/" "system-local-login"
 sync "/etc/tlp.d" "10-config.conf"
+sync_etc "hostname"
 
 # boot
 sync "/boot/" "refind_linux.conf"
