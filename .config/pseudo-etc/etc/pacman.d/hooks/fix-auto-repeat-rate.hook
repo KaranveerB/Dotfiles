@@ -1,0 +1,11 @@
+[Trigger]
+Type = Package
+Operation = Upgrade
+Operation = Remove
+Target = *
+
+[Action]
+Description = TEMPORARY fix keyboard auto repeat rate
+When = PostTransaction
+Exec = /bin/sh -c 'export DISPLAY=:0 && export XAUTHORITY=/home/lost/.Xauthority && /bin/xset r rate 450 60'
+

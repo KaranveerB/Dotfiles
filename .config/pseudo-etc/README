@@ -1,0 +1,3 @@
+File permissions are not correct with this method and must be manually.
+Do NOT simply copy the contents of this to the corresponding folders.
+Also note that certain files would need adjusting on a fresh install, such as fstab where drive ids matter.
