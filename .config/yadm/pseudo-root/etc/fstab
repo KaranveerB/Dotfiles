@@ -1,14 +1,35 @@
-# /dev/nvme0n1p3
-UUID=26fc7522-7574-4af8-88a0-8a44c63a3bd5	/         	ext4      	rw,relatime	0 1
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/         	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=256,subvol=/@root	0 0
+
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/home     	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=257,subvol=/@home	0 0
+
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/home/lost/.cache	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=265,subvol=/@homecache	0 0
+
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/home/lost/.local	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=264,subvol=/@homelocal	0 0
+
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/var/cache	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=261,subvol=/@varcache	0 0
+
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/var/log  	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=262,subvol=/@varlog	0 0
+
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/var/tmp  	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=263,subvol=/@vartmp	0 0
+
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/snapshots	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=258,subvol=/@snapshots	0 0
+
+# /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/swap     	btrfs     	rw,noatime,ssd,space_cache=v2,nodatacow,subvolid=259,subvol=/@swap	0 0
 
 # /dev/nvme0n1p2
-UUID=0fd2defb-4545-4874-b72b-adc0129d477b	/boot     	ext4      	rw,relatime	0 2
-
-# /dev/nvme0n1p4
-UUID=da286d47-ced5-4958-af14-cb64453413f1	/home		ext4		rw,relatime	0 2
+/dev/nvme0n1p2      	/boot     	ext4      	rw,noatime	0 2
 
 # /dev/nvme0n1p1
-UUID=9A21-A51E	/boot/efi	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 2
+/dev/nvme0n1p1      	/boot/efi 	vfat      	rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
-# /swapfile
-/swapfile none swap defaults 0 0
+# swapfile
+/swap/swapfile  	none    	swap      	defaults	0 0

@@ -1,0 +1,12 @@
+[Unit]
+Description=Run btrbk hourly (and 1 minute after boot)
+Requires=btrbk.service
+
+[Timer]
+Unit=btrbk.service
+OnBootSec=30s
+OnUnitActiveSec=1h
+
+[Install]
+WantedBy=timers.target
+

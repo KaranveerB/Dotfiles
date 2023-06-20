@@ -1,8 +1,6 @@
 #%PAM-1.0
-auth		sufficient  	pam_fprintd_grosshack.so
-auth		sufficient  	pam_unix.so try_first_pass nullok
-#auth       sufficient                  pam_unix.so          try_first_pass likeauth nullok
-#auth       sufficient                  pam_fprintd.so
+auth       sufficient                  pam_fprintd_grosshack.so
+auth       sufficient                  pam_unix.so          try_first_pass nullok
 auth       required                    pam_faillock.so      preauth
 # Optionally use requisite above if you do not want to prompt for the password
 # on locked accounts.

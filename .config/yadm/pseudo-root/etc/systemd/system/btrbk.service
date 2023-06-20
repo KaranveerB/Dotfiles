@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs btrbk
+
+[Service]
+User=root
+# if you ever think it does, oneshot is causing issues and use simple instead
+# if you never think it does, oneshot is perfectly fine
+Type=oneshot
+ExecStart=/bin/btrbk run -q
