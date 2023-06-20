@@ -37,6 +37,8 @@ sync "/etc/systemd/system" "btrbk-hourly.timer"
 sync "/etc/systemd/system" "btrbk.service"
 sync_etc "mkinitcpio.d"
 sync_etc "btrbk"
+sync "/etc/systemd/" "logind.conf.d"
+sync "/etc/systemd/" "sleep.conf.d"
 
 # boot
 sync "/boot/efi/EFI/refind" "refind.conf"
