@@ -36,7 +36,7 @@ wm-border-color = #6285ef
 
 [bar/main]
 
-monitor = ${env:MONITOR:DP-1}
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 25
 ;offset-x = 1%
