@@ -39,6 +39,7 @@ sync_etc "mkinitcpio.d"
 sync_etc "btrbk"
 sync "/etc/systemd/" "logind.conf.d"
 sync "/etc/systemd/" "sleep.conf.d"
+sync "/etc/udev/rules.d/" "99-lowbat.rules"
 
 # boot
 sync "/boot/efi/EFI/refind" "refind.conf"

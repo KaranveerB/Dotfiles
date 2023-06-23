@@ -1,0 +1,2 @@
+# Suspend system when battery level drops to 2% or lower (based on https://wiki.archlinux.org/title/Hibernate_on_low_battery_level)
+SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-2]", RUN+="/usr/bin/systemctl hibernate"
