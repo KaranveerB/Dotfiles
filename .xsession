@@ -11,6 +11,7 @@ xrdb -merge ~/.Xresources
 sh .fehbg
 #xwinwrap -ov -ni -fs -un -g 1920x1080+0+0 -- mpv ~/.wallpapers/snow_fall.mp4  --loop --no-audio --no-input-default-bindings -wid WID &
 #picom --daemon --backend glx &
+picom --daemon &
 
 # start dwmblocks
 #dwmblocks &

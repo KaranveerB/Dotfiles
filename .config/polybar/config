@@ -41,7 +41,8 @@ width = 100%
 height = 25
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 3.0
+;radius = 3.0
+radius = 0
 fixed-center = false
 
 background = ${colors.background}
@@ -50,9 +51,9 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-border-top-size = 3
-border-right-size = 3
-border-left-size = 3
+;border-top-size = 3
+;border-right-size = 3
+;border-left-size = 3
 border-color = #00000000
 
 padding-left = 0
@@ -206,7 +207,7 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 15
+interval = 30
 
 format = <ramp-load> <label>
 
@@ -225,7 +226,7 @@ label = %percentage%%
 
 [module/memory]
 type = internal/memory
-interval = 15
+interval = 30
 
 format = <ramp-used> <label>
 
@@ -270,7 +271,7 @@ ramp-signal-4-foreground = ${colors.green}
 
 [module/date]
 type = internal/date
-interval = 10
+interval = 30
 
 date = " %a, %Y/%m/%d"
 ;date-alt = " %Y-%m-%d"
@@ -337,8 +338,7 @@ full-at = 98
 low-at = 0
 #low-at = 0 fixes battery getting stuck at 11% and not going lower
 time-format = %H:%M
-#interval = 30
-interval = 5
+interval = 30
 
 label-discharging = %percentage%% (%time%)
 label-charging = %percentage%% (%time%)
@@ -374,7 +374,7 @@ animation-charging-framerate = 500
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 90
-interval = 45
+interval = 30
 
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>

@@ -26,6 +26,10 @@ alias blup="bluetoothctl power on"
 # clean make
 alias clm="make clean && sudo make install clean"
 
+# cd + ls
+function cdl() { cd $1 && ls }
+
+
 # {{{ dwm
 # dwmblocks
 alias dwmb="killall dwmblocks &>/dev/null; dwmblocks & disown"
@@ -92,7 +96,8 @@ alias pacreml="grep -i removed /var/log/pacman.log"
 alias clearpico="rm -rf ~/dc/ctf/pico/*"
 
 # picom
-alias startpicom="picom --daemon --backend glx"
+#alias startpicom="picom --daemon --backend glx"
+alias startpicom="picom --daemon"
 
 # pipe-viewer
 alias pv="pipe-viewer --audio"
@@ -116,11 +121,19 @@ alias startpulseeffects="pulseeffects --gapplication-service & disown"
 # python
 alias py="python"
 
+# rsync
+# https://www.reddit.com/r/linuxquestions/comments/ne9vno/comment/gyfd0ps/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+alias rsynccp="rsync --archive --modify-window=2 --progress --verbose --itemize-changes --stats --human-readable"
+
 # suspend interrupt
 alias inhibitsleep="systemd-inhibit --what=handle-lid-switch sleep 1d"
 
 # systemd
 alias disablelid="echo 'Ctrl+C to re-enable sleep on lid close' && systemd-inhibit --what=handle-lid-switch sleep 1d"
+
+# tlp
+alias tlpboost="sudo mv /etc/tlp.d/11-boost.conf.disabled /etc/tlp.d/11-boost.conf && sudo tlp start"
+alias tlpnoboost="sudo mv /etc/tlp.d/11-boost.conf /etc/tlp.d/11-boost.conf.disabled && sudo tlp start"
 
 # valgrind
 alias qvalgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s "

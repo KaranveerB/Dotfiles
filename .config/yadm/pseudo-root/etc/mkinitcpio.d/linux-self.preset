@@ -1,0 +1,13 @@
+# mkinitcpio preset file for the 'linux' package
+
+#ALL_config="/etc/mkinitcpio.conf"
+ALL_kver=""
+ALL_kver="/home/lost/linux2/arch/x86/boot/bzImage"
+ALL_microcode=(/boot/*-ucode.img)
+
+PRESETS=('default')
+
+#default_config="/etc/mkinitcpio.conf"
+default_image="/boot/initramfs-self.img"
+default_uki="/boot/arch-uki/arch-self.efi"
+#default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
