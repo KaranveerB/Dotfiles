@@ -37,4 +37,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " local configs
 Plug 'embear/vim-localvimrc'
 
+" Indent detection
+Plug 'tpope/vim-sleuth'
+
 call plug#end()

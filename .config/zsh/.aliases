@@ -82,7 +82,7 @@ alias nerd='firefox --new-window "https://www.nerdfonts.com/cheat-sheet"'
 ## acts as extension to "arch" plugin for zsh
 unalias pacupg # Set by arch plugin for zsh
 #function pacupg() { arch-upgrade && kill -36 $(pidof dwmblocks); }
-function pacupg() { paru && polyhook packages}
+function pacupg() { paru; polyhook packages }
 alias pacq="pacman -Q"
 alias pacqq="pacman -Qq"
 alias pacqi="pacman -Qi"
