@@ -24,11 +24,11 @@ alias blctl="bluetoothctl"
 alias blup="bluetoothctl power on"
 
 # clean make
-alias clm="make clean && sudo make install clean"
+alias sudoclm="make clean && sudo make install"
+alias clm="make clean install"
 
 # cd + ls
 function cdl() { cd $1 && ls }
-
 
 # {{{ dwm
 # dwmblocks
@@ -67,7 +67,6 @@ alias kit="kitty +kitten"
 
 function t() { kitty -d=$PWD & disown }
 
-
 # less
 alias l="less"
 
@@ -77,6 +76,9 @@ alias vim="nvim"
 
 # nerd font
 alias nerd='firefox --new-window "https://www.nerdfonts.com/cheat-sheet"'
+
+# open
+function o() { xdg-open $1 2>&1 /dev/null & disown }
 
 # {{{ pacman
 ## acts as extension to "arch" plugin for zsh

@@ -1,7 +1,7 @@
 #!/bin/dash
 
 amixer sget Master | grep '\[off\]' > /dev/null && mute=1 || mute=0
-vol=$(amixer sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%')
+vol=$(amixer sget Master | grep 'Mono:' | awk -F'[][]' '{ print $2 }' | tr -d '%')
 
 if [ $mute -eq 1 ]
 then

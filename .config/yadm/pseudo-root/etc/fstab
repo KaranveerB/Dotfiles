@@ -2,22 +2,22 @@
 /dev/mapper/cryptroot	/         	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=256,subvol=/@root	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/home     	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=257,subvol=/@home	0 0
+ /dev/mapper/cryptroot	/home     	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=1599,subvol=/@home	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/home/lost/.cache	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=265,subvol=/@homecache	0 0
+ /dev/mapper/cryptroot	/home/lost/.cache	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:0,subvolid=265,subvol=/@homecache	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/home/lost/.local	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=264,subvol=/@homelocal	0 0
+ /dev/mapper/cryptroot	/home/lost/.local	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=1600,subvol=/@homelocal	0 0
 
 # /dev/mapper/cryptroot
 /dev/mapper/cryptroot	/var/cache	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=261,subvol=/@varcache	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/var/log  	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=262,subvol=/@varlog	0 0
+/dev/mapper/cryptroot	/var/log  	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:0,subvolid=262,subvol=/@varlog	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/var/tmp  	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=263,subvol=/@vartmp	0 0
+/dev/mapper/cryptroot	/var/tmp  	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:0,subvolid=263,subvol=/@vartmp	0 0
 
 # /dev/mapper/cryptroot
 /dev/mapper/cryptroot	/snapshots	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=258,subvol=/@snapshots	0 0

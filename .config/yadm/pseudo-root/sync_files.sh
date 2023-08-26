@@ -19,6 +19,11 @@ sync_etc() {
   sync "/etc" "$1"
 }
 
+del_file() {
+  echo "not syncing $1"
+  rm ".$1"
+}
+
 # etc
 sync_etc "fstab"
 sync_etc "auto-cpufreq.conf"
@@ -31,7 +36,8 @@ sync "/etc/X11/" "xorg.conf.d"
 sync "/etc/pam.d/" "system-auth"
 sync "/etc/pam.d/" "system-local-login"
 sync "/etc/pam.d/" "ly"
-sync "/etc/tlp.d" "10-config.conf"
+sync_etc "tlp.d"
+del_file "/etc/tlp.d/README"
 sync_etc "hostname"
 sync "/etc/systemd/system" "btrbk-hourly.timer"
 sync "/etc/systemd/system" "btrbk.service"
