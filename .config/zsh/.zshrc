@@ -133,7 +133,8 @@ source $HOME/.config/zsh/.aliases
 # (cat ~/.cache/wal/sequences &)
 
 # Enable fuzzy finder
-[ -f ~/.config/zsh/fzf/fzf.zsh ] && source ~/.config/zsh/fzf/fzf.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

@@ -141,10 +141,10 @@ alias tlpnoboost="sudo mv /etc/tlp.d/11-boost.conf /etc/tlp.d/11-boost.conf.disa
 alias qvalgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s "
 
 # {{{ wifi
-alias wlman="sudo iw wlp1s0 set type managed"
-alias wlmon="sudo iw wlp1s0 set monitor none"
-alias wlup="sudo ip link set wlp1s0 up"
-alias wldown="sudo ip link set wlp1s0 down"
+alias wlman="sudo iw wlp166s0 set type managed"
+alias wlmon="sudo iw wlp166s0 set monitor none"
+alias wlup="sudo ip link set wlp166s0 up"
+alias wldown="sudo ip link set wlp166s0 down"
 # }}}
 
 # wine
