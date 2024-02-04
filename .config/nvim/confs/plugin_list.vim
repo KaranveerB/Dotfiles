@@ -40,4 +40,8 @@ Plug 'embear/vim-localvimrc'
 " Indent detection
 Plug 'tpope/vim-sleuth'
 
+" Comments
+Plug 'numToStr/Comment.nvim'
+
+
 call plug#end()

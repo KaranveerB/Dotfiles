@@ -32,7 +32,8 @@ deadd-notification-center &
 
 # preferences 
 xset r rate 450 60 & # move to xorg config once they get their stuff together
-pamixer --set-volume 0
+# it doesn't't work anymore. idk why. maybe this will fix it?
+bash -c "sleep 5; pamixer --set-volume 0;"
 
 unclutter --timeout 20 &
 

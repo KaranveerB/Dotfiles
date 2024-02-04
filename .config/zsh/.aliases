@@ -1,6 +1,14 @@
 # vim:foldmethod=marker
 # vim:filetype=zsh
 
+alias mk="make"
+alias mkcc="make -j$(nproc) CC='ccache gcc' CXX='ccache g++' CPP='ccache g++'"
+alias mk11="make -j$(nproc) CC='gcc-11' CXX='g++-11' CPP='g++-11'"
+alias mk11cc="make -j$(nproc) CC='ccache gcc-11' CXX='ccache g++-11' CPP='ccache g++-11'"
+alias kssh="kitty +kitten ssh"
+function dockbash() { docker exec -it $1 /bin/bash }
+function qgd() { git diff $1~1 $1 }
+
 # TMP RCLONE
 alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m"
 # TODO: this is crap. Do something about it later. Likely polybar stuff mixed with dwm commands and rofi.
@@ -12,14 +20,14 @@ alias fix-bl="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
 alias resbl="sudo systemctl restart bluetooth"
 alias resaltswap="setxkbmap -option altwin:swap_alt_win &"
 alias enablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 headset-head-unit"
-alias disablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 a2dp-sink-aac"
+alias disablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 a2dp-sink-sbc_xq"
 alias resxset="xset r rate 450 60"
 
 # barrier
 alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
 
 # bluetoothctl
-alias blacon="bluetoothctl power on && bluetoothctl connect" # meant to be used with tab completion
+alias blacon="bluetoothctl power on && sleep 1 && bluetoothctl connect" # meant to be used with tab completion
 alias blctl="bluetoothctl"
 alias blup="bluetoothctl power on"
 
@@ -122,6 +130,7 @@ alias startpulseeffects="pulseeffects --gapplication-service & disown"
 
 # python
 alias py="python"
+alias pyserv="python -m http.server"
 
 # rsync
 # https://www.reddit.com/r/linuxquestions/comments/ne9vno/comment/gyfd0ps/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
@@ -136,6 +145,8 @@ alias disablelid="echo 'Ctrl+C to re-enable sleep on lid close' && systemd-inhib
 # tlp
 alias tlpboost="sudo mv /etc/tlp.d/11-boost.conf.disabled /etc/tlp.d/11-boost.conf && sudo tlp start"
 alias tlpnoboost="sudo mv /etc/tlp.d/11-boost.conf /etc/tlp.d/11-boost.conf.disabled && sudo tlp start"
+alias tlpgpuboost="sudo mv /etc/tlp.d/11-gpu-boost.conf.disabled /etc/tlp.d/11-gpu-boost.conf && sudo tlp start"
+alias tlpnogpuboost="sudo mv /etc/tlp.d/11-gpu-boost.conf /etc/tlp.d/11-gpu-boost.conf.disabled && sudo tlp start"
 
 # valgrind
 alias qvalgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s "
@@ -182,6 +193,7 @@ alias cproj="cd ~/proj/"
 alias csch="cd ~/sch/"
 alias ctb="cd ~/sch/tb/"
 alias cterm="cd ~/.config/kitty/"
+alias cwork="cd ~/proj/work/"
 alias czsh="cd ~/.config/zsh/"
 # }}}
 
