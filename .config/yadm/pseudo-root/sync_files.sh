@@ -27,7 +27,8 @@ del_file() {
 # etc
 sync_etc "fstab"
 sync_etc "auto-cpufreq.conf"
-sync "/etc/fwupd/" "uefi_capsule.conf"
+sync "/etc" "mkinitcpio.conf"
+sync "/etc/fwupd" "uefi_capsule.conf"
 sync "/etc/zsh/" "zshenv"
 sync_etc "pacman.conf"
 sync "/etc/pacman.d/" "hooks"
