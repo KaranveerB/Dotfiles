@@ -11,3 +11,4 @@ source ~/.config/nvim/confs/ui.vim
 source ~/.config/nvim/confs/key_binds.vim
 source ~/.config/nvim/confs/behaviour.vim
 source ~/.config/nvim/confs/code.vim
+source ~/.config/nvim/confs/files.vim

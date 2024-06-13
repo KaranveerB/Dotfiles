@@ -62,11 +62,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 5
 
-font-0 = fixed:pixelsize=15;1
-font-1 = unifont:fontformat=truetype:size=14:antialias=true;0
-#font-2 = Symbols Nerd Font:style=1000-em:pixelsize=11:antialias=true;1
-font-2 = Font Awesome 6 Free,Font Awesome 6 Free Solid:style=Solid:pixelsize=13;1
-font-3 = Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular:pixelsize=13;1
+font-0 = fixed:pixelsize=15;
+font-1 = Source Han Sans JP Normal:pixelsize=15;
+font-2 = unifont:fontformat=truetype:size=13;
+font-3 = Font Awesome 6 Free Solid:pixelsize=12;
+font-4 = Font Awesome 6 Brands:pixelsize=12;
 
 modules-left = dwm
 modules-center = xwindow
@@ -75,7 +75,6 @@ modules-right = memory cpu temperature pulseaudio wlan packages battery date
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
 
 override-redirect = false
 
@@ -84,11 +83,10 @@ enable-ipc = true
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-#tray-position = right
-
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:95:...%
+label = %title:0:89:...%
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -248,13 +246,12 @@ type = internal/network
 interface = wlp166s0
 interval = 60
 
-#format-connected = <ramp-signal>
 format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
+label-connected = %essid:0:19:...%
+
 
 format-disconnected = <label-disconnected>
 #format-disconnected-underline = ${self.format-connected-underline}
-#label-disconnected = 
 label-disconnected =  Disconnected
 label-disconnected-foreground = ${colors.red}
 

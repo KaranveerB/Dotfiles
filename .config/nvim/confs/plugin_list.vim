@@ -43,5 +43,16 @@ Plug 'tpope/vim-sleuth'
 " Comments
 Plug 'numToStr/Comment.nvim'
 
+" Movement
+Plug 'justinmk/vim-sneak'
+
+" Files
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
+
+Plug 'nvim-tree/nvim-tree.lua'
+
+Plug 'elihunter173/dirbuf.nvim'
+
 
 call plug#end()

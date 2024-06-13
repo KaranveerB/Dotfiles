@@ -1,35 +1,35 @@
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/         	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=256,subvol=/@root	0 0
+/dev/mapper/cryptroot	/		btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:2,subvolid=256,subvol=/@root	0 0
 
 # /dev/mapper/cryptroot
- /dev/mapper/cryptroot	/home     	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=1599,subvol=/@home	0 0
+/dev/mapper/cryptroot	/home		btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:3,subvolid=1599,subvol=/@home	0 0
 
 # /dev/mapper/cryptroot
- /dev/mapper/cryptroot	/home/lost/.cache	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:0,subvolid=265,subvol=/@homecache	0 0
+/dev/mapper/cryptroot	/home/lost/.cache	btrfs	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=265,subvol=/@homecache	0 0
 
 # /dev/mapper/cryptroot
- /dev/mapper/cryptroot	/home/lost/.local	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=1600,subvol=/@homelocal	0 0
+/dev/mapper/cryptroot	/home/lost/.local	btrfs	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=1600,subvol=/@homelocal	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/var/cache	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=261,subvol=/@varcache	0 0
+/dev/mapper/cryptroot	/var/cache	btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:2,subvolid=261,subvol=/@varcache	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/var/log  	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:0,subvolid=262,subvol=/@varlog	0 0
+/dev/mapper/cryptroot	/var/log	btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:2,subvolid=262,subvol=/@varlog	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/var/tmp  	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:0,subvolid=263,subvol=/@vartmp	0 0
+/dev/mapper/cryptroot	/var/tmp	btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:no,subvolid=263,subvol=/@vartmp	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/snapshots	btrfs     	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=258,subvol=/@snapshots	0 0
+/dev/mapper/cryptroot	/snapshots	btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:no,subvolid=258,subvol=/@snapshots	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/swap     	btrfs     	rw,noatime,ssd,space_cache=v2,nodatacow,subvolid=259,subvol=/@swap	0 0
+/dev/mapper/cryptroot	/swap		btrfs		rw,noatime,ssd,space_cache=v2,nodatacow,compress=zstd:no,subvolid=259,subvol=/@swap	0 0
 
 # /dev/nvme0n1p2
-/dev/nvme0n1p2      	/boot     	ext4      	rw,noatime	0 2
+UUID="328a26b1-50b4-480a-be38-2ad37477035a" /boot	ext4		rw,noatime	0 2
 
 # /dev/nvme0n1p1
-/dev/nvme0n1p1      	/boot/efi 	vfat      	rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+UUID="9A21-A51E"	/boot/efi	vfat		rw,noatime,fmask=077,dmask=077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
 # swapfile
-/swap/swapfile  	none    	swap      	defaults	0 0
+/swap/swapfile		none		swap		defaults	0 0

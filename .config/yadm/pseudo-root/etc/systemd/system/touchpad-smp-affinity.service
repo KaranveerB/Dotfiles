@@ -1,0 +1,15 @@
+# https://community.frame.work/t/tracking-touchpad-interrupts-battery-usage-issues-idma64-2/13630
+# https://community.frame.work/t/tracking-touchpad-interrupts-battery-usage-issues-idma64-2/13630/49
+
+[Unit]
+Description=Pin touchpad interrupts to CPU14
+Documentation=https://community.frame.work/t/tracking-touchpad-interrupts-battery-usage-issues-idma64-2/13630
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/usr/bin/sh -c 'echo 14 > /proc/irq/$(grep designware.2 /proc/interrupts | cut -d ":" -f1 | xargs)/smp_affinity_list'
+ExecStop=/usr/bin/sh -c 'echo "0-$(nproc --all --ignore=1)" > /proc/irq/$(grep designware.2 /proc/interrupts | cut -d ":" -f1 | xargs)/smp_affinity_list'
+
+[Install]
+WantedBy=multi-user.target

@@ -5,5 +5,5 @@ Description=Runs btrbk
 User=root
 # if you ever think it does, oneshot is causing issues and use simple instead
 # if you never think it does, oneshot is perfectly fine
-Type=oneshot
+Type=simple
 ExecStart=/bin/btrbk run -q

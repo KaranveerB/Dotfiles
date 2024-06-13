@@ -3,7 +3,7 @@
 #ALL_config="/etc/mkinitcpio.conf"
 #ALL_kver="/home/lost/linux-6.4.4-arch1/arch/x86/boot/bzImage"
 ALL_kver="/boot/vmlinuz-self"
-ALL_microcode=(/boot/*-ucode.img)
+microcode=(/boot/*-ucode.img)
 
 PRESETS=('default')
 

@@ -17,8 +17,8 @@ picom --daemon --backend glx &
 #dwmblocks &
 
 # lightdm locking
-# light-locker --lock-on-suspend --lock-on-lid &
-xset +dpms s 0 0 & # change back to 5 at some point or some other value
+# light-locker --lock-on-suspend --lock-on-lid 
+xset s 300
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 
 deadd-notification-center &
