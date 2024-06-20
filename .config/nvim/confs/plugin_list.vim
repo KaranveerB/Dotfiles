@@ -2,7 +2,7 @@
 call plug#begin('~/.local/share/nvim/site/plugged')
 
 " Code completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Themes
 Plug 'chriskempson/base16-vim'
@@ -54,5 +54,15 @@ Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'elihunter173/dirbuf.nvim'
 
+Plug 'nvim-tree/nvim-tree.lua'
+
+" Zero-config lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
 
 call plug#end()

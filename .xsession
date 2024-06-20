@@ -10,7 +10,7 @@ xrdb -merge ~/.Xresources
 
 sh .fehbg
 #xwinwrap -ov -ni -fs -un -g 1920x1080+0+0 -- mpv ~/.wallpapers/snow_fall.mp4  --loop --no-audio --no-input-default-bindings -wid WID &
-picom --daemon --backend glx &
+picom --daemon --backend glx
 #picom --daemon &
 
 # start dwmblocks
@@ -31,7 +31,7 @@ deadd-notification-center &
 #redshift -l 49:-123 & 
 
 # preferences 
-xset r rate 450 60 & # move to xorg config once they get their stuff together
+xset r rate 450 60 # move to xorg config once they get their stuff together
 # it doesn't't work anymore. idk why. maybe this will fix it?
 bash -c "sleep 5; pamixer --set-volume 0;"
 
