@@ -91,7 +91,7 @@ plugins=(
   # history
   # npm
   # pip
-  safe-paste
+#  safe-paste
   # systemd
   z
   #zsh-interactive-cd
@@ -127,10 +127,7 @@ fi
 source $HOME/.config/zsh/.aliases
 
 # Enable vi mode
-# bindkey -v
-
-# Import colorscheme from 'wal' asynchronously
-# (cat ~/.cache/wal/sequences &)
+bindkey -v
 
 # Enable fuzzy finder
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
@@ -139,5 +136,3 @@ source $HOME/.config/zsh/.aliases
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# enable extra goodies for fuchsia
-[[ ! -f ~/fuchsia/scripts/fx-env.sh ]] || source ~/fuchsia/scripts/fx-env.sh

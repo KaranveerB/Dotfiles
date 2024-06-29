@@ -18,7 +18,8 @@ picom --daemon --backend glx
 
 # lightdm locking
 # light-locker --lock-on-suspend --lock-on-lid 
-xset s 300
+xset s 300 300
+xset +dpms
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 
 deadd-notification-center &

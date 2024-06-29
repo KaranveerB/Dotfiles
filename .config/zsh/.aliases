@@ -32,6 +32,7 @@ alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
 
 # blob drop
 alias bd="blobdrop"
+alias p="blobdrop" # pick
 
 # bluetoothctl
 alias blacon="bluetoothctl power on && bluetoothctl connect" # meant to be used with tab completion
@@ -87,8 +88,8 @@ function t() { kitty -d=$PWD & disown }
 alias l="less"
 
 # neovim
-alias vi="nvim"
 alias vim="nvim"
+alias rvim="vim" # real vim
 
 # nerd font
 alias nerd='firefox --new-window "https://www.nerdfonts.com/cheat-sheet"'
@@ -99,8 +100,7 @@ function o() { xdg-open $1 2>&1 /dev/null & disown }
 # {{{ pacman
 ## acts as extension to "arch" plugin for zsh
 unalias pacupg # Set by arch plugin for zsh
-#function pacupg() { arch-upgrade && kill -36 $(pidof dwmblocks); }
-function pacupg() { paru; polyhook packages }
+function pacupg() { paru && echo "running tldr -u"; tldr -u; exit_code=$?; polyhook packages; return $exit_code }
 alias pacq="pacman -Q"
 alias pacqq="pacman -Qq"
 alias pacqi="pacman -Qi"
