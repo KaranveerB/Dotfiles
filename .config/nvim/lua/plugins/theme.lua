@@ -43,7 +43,9 @@ return {
     },
     config = function()
       vim.cmd('colorscheme catppuccin-mocha')
-      vim.cmd('highlight Normal guibg=#080B1A') -- darker and transparent
+      -- Make bg color the same as kitty terminal's. Required for transparency.
+      vim.cmd('highlight Normal guibg=#080B1A')
+      vim.cmd('highlight NormalNC guibg=#080B1A')
     end,
   }
 }

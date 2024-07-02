@@ -11,6 +11,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("config.lazy-event")
 
+
 lazy = require("lazy")
 lazy.setup({
   spec = {

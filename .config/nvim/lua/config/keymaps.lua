@@ -5,3 +5,10 @@ vim.api.nvim_set_keymap('i', '<C-h>', '<Left>',  {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-j>', '<Down>',  {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-k>', '<Up>',    {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', {noremap = true})
+
+--[[ this is done in a different way in lua/plugins/movement.lua
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h',  {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j',  {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k',  {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l',  {noremap = true})
+--]]
