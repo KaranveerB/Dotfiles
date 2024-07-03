@@ -76,5 +76,15 @@ return {
         LazyVim.on_very_lazy(function() vim.notify = require("notify") end)
       end
     end,
+  },
+  {
+    'mbbill/undotree',
+    keys = {
+        {'<leader>ut', vim.cmd.UndotreeToggle }
+    },
+    config = function()
+      vim.g.undotree_WindowLayout = 3 -- Right side
+      vim.g.undotree_SplitWidth = 40
+    end
   }
 }

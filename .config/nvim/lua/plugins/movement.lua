@@ -21,13 +21,12 @@ return {
     'knubie/vim-kitty-navigator',
     lazy = false,
     keys = {
-      { '<C-t>', mode = { 'n' }, '', desc = 'Nvim/Kitty navigate left' },
       { '<C-h>', mode = { 'n' }, '<cmd>:KittyNavigateLeft<CR>', desc = 'Nvim/Kitty navigate left' },
-      { '<C-j>', mode = { 'n' }, '<cmd>:KittyNavigateDown<CR>', desc = 'Nvim/Kitty navigate left' },
+      { '<C-j>', mode = { 'n' }, '<cmd>:KittyNavigateDown<CR>', desc = 'Nvim/Kitty navigate down' },
       { '<C-k>', mode = { 'n' }, '<cmd>:KittyNavigateUp<CR>', desc = 'Nvim/Kitty navigate up' },
       { '<C-l>', mode = { 'n' }, '<cmd>:KittyNavigateRight<CR>', desc = 'Nvim/Kitty navigate right' },
     },
-    config = function(plugin)
+    build = function(plugin)
       local src = plugin.dir .. '/'
       local dst = '~/.config/kitty/kitten/vim-kitty-navigator/'
       os.execute('mkdir -p ' .. dst)

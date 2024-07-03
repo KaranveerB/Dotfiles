@@ -21,9 +21,6 @@ return {
         indent = { enable = true },  
     },
   },
-  -- LSP
-  { 'neovim/nvim-lspconfig' },
-  -- Others
   {
     -- colourized brackets/delimiters
     'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git',

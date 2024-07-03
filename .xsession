@@ -5,7 +5,7 @@
 
 xrdb -merge ~/.Xresources
 
-# swap modkey --- moved to xorg config
+# swap modkey --- moved to keyd config
 #setxkbmap -option altwin:swap_alt_win &
 
 sh .fehbg
