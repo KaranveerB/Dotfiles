@@ -396,8 +396,8 @@ type = custom/ipc
 hook-0 = statusbar-package
 initial = 1
 interval = 3600
-format-prefix =   
 ;Box in fontawesome
+format-prefix =   
 
 [settings]
 screenchange-reload = true

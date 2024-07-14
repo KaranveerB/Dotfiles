@@ -2,6 +2,9 @@ return {
   {
     'ggandor/leap.nvim',
     lazy = false, -- leap lazy loads itself
+    dependencies = {
+      'tpope/vim-repeat',
+    },
     keys = {
       { 's', mode = { 'n', 'x', 'o' }, desc = 'Leap Forward to' },
       { 'S', mode = { 'n', 'x', 'o' }, desc = 'Leap Backward to' },
@@ -9,31 +12,34 @@ return {
     },
     config = function(_, opts)
       local leap = require('leap')
+      local user = require('leap.user')
       for k, v in pairs(opts) do
         leap.opts[k] = v
       end
       leap.add_default_mappings(true)
       vim.keymap.del({ 'x', 'o' }, 'x')
       vim.keymap.del({ 'x', 'o' }, 'X')
+
+      user.set_repeat_keys('<enter>', '<backspace>')
     end,
   },
   {
-    'knubie/vim-kitty-navigator',
-    lazy = false,
-    keys = {
-      { '<C-h>', mode = { 'n' }, '<cmd>:KittyNavigateLeft<CR>', desc = 'Nvim/Kitty navigate left' },
-      { '<C-j>', mode = { 'n' }, '<cmd>:KittyNavigateDown<CR>', desc = 'Nvim/Kitty navigate down' },
-      { '<C-k>', mode = { 'n' }, '<cmd>:KittyNavigateUp<CR>', desc = 'Nvim/Kitty navigate up' },
-      { '<C-l>', mode = { 'n' }, '<cmd>:KittyNavigateRight<CR>', desc = 'Nvim/Kitty navigate right' },
-    },
+    'MunsMan/kitty-navigator.nvim',
+    -- When moving from kitty window to nvim, the first split will be focused
+    -- if the plugin isn't loaded. This isn't terrible, but I'd rather the
+    -- proper split is focused, hence `VeryLazy`.
+    event = 'VeryLazy',
     build = function(plugin)
       local src = plugin.dir .. '/'
-      local dst = '~/.config/kitty/kitten/vim-kitty-navigator/'
+      local dst = '~/.config/kitty/'
       os.execute('mkdir -p ' .. dst)
       os.execute('cp ' .. src .. '*.py ' .. dst)
     end,
-    init = function()
-      vim.g.kitty_navigator_no_mappings = 1
-    end
+    keys = {
+      { '<C-h>', function() require('kitty-navigator').navigateLeft() end, desc = 'Move left a vim/kitty split'},
+      { '<C-j>', function() require('kitty-navigator').navigateDown() end, desc = 'Move down a vim/kitty split'},
+      { '<C-k>', function() require('kitty-navigator').navigateUp() end, desc = 'Move up a vim/kitty split'},
+      { '<C-l>', function() require('kitty-navigator').navigateRight() end, desc = 'Move right a vim/kitty split'},
+    }
   },
 }

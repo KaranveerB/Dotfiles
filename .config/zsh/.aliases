@@ -14,7 +14,7 @@ function d2h() { printf '%x' $1 }
 function findsymbol() { find . | grep "\.so\|\.o" |  xargs -I % bash -c "nm % | grep $1 && echo %" 2>&/dev/null }
 
 # TMP RCLONE
-alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m"
+alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s"
 # TODO: this is crap. Do something about it later. Likely polybar stuff mixed with dwm commands and rofi.
 # The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
 
@@ -143,10 +143,13 @@ alias py="python3"
 # https://www.reddit.com/r/linuxquestions/comments/ne9vno/comment/gyfd0ps/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 alias rsynccp="rsync --archive --modify-window=2 --progress --verbose --itemize-changes --stats --human-readable"
 
+# sudo
+## refresh sudo timeout each time sudo is used
+alias sudo="sudo -v; sudo"
+
 # suspend interrupt
 alias inhibitlid="echo 'Ctrl+C to re-enable sleep on lid close' && systemd-inhibit --what=handle-lid-switch sleep 1d"
 alias inhibitsleep="systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target sleep 1d"
-
 
 # tlp
 alias tlpboost="sudo mv /etc/tlp.d/11-boost.conf.disabled /etc/tlp.d/11-boost.conf && sudo tlp start"
@@ -156,10 +159,10 @@ alias tlpnoboost="sudo mv /etc/tlp.d/11-boost.conf /etc/tlp.d/11-boost.conf.disa
 alias qvalgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s "
 
 # {{{ wifi
-alias wlman="sudo iw wlp1s0 set type managed"
-alias wlmon="sudo iw wlp1s0 set monitor none"
-alias wlup="sudo ip link set wlp1s0 up"
-alias wldown="sudo ip link set wlp1s0 down"
+alias wlman="sudo iw wlp166s0 set type managed"
+alias wlmon="sudo iw wlp166s0 set monitor none"
+alias wlup="sudo ip link set wlp166s0 up"
+alias wldown="sudo ip link set wlp166s0 down"
 # }}}
 
 # wine

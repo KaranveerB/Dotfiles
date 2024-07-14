@@ -22,8 +22,16 @@ return {
     },
   },
   {
+    'rightson/vim-p4-syntax',
+    ft = 'p4',
+  },
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    lazy = 'VeryLazy',
+  },
+  {
     -- colourized brackets/delimiters
     'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git',
     event = 'VeryLazy',
-  }
+  },
 }

@@ -1,3 +1,7 @@
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -15,11 +19,15 @@ export PATH=$HOME/local/bin/statusbar:$PATH # Set in .xsession (before dwmblocks
 export PATH=$HOME/.dwm/statusbar:$PATH
 export PATH=/usr/lib/wireshark/extcap:$PATH
 
-
 export JAVA_HOME="/usr/lib/jvm/default-runtime"
 export npm_config_prefix="$HOME/.local"
 export GPG_TTY=$(tty)
 
+# Dotfile management with antigen
+if [ -f "$XDG_DATA_HOME/antidot/env.sh" ]; then source "$XDG_DATA_HOME/antidot/env.sh"; fi
+if [ -f "$XDG_DATA_HOME/antidot/alias.sh" ]; then source "$XDG_DATA_HOME/antidot/alias.sh"; fi
+
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
 fi
+

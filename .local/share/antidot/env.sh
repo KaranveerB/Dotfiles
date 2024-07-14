@@ -1,0 +1,8 @@
+export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
+export GRADLE_USER_HOME="${XDG_DATA_HOME}/gradle"
+export npm_config_cache="${XDG_CACHE_HOME}/npm"
+export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
+export STACK_ROOT="${XDG_DATA_HOME}/stack"
+export _Z_DATA="${XDG_CACHE_HOME}/z"
+export GOPATH="${XDG_DATA_HOME}/go"
+export CARGO_HOME="${XDG_DATA_HOME}/cargo"

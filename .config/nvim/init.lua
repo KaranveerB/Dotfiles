@@ -15,7 +15,7 @@ require("config.lazy-event")
 lazy = require("lazy")
 lazy.setup({
   spec = {
-    { "LazyVim/LazyVim" },
+    { 'LazyVim/LazyVim' },
     { import = "plugins" },
   },
   defaults = {
@@ -41,8 +41,8 @@ lazy.setup({
       },
     },
   },
-  keys = {
-    -- { '<leader>lz', '<cmd>:Lazy<cr>', dec = 'Open Lazy.nvim panel'} -- wrong
-  },
 })
 
+vim.keymap.set('n', '<leader>lz', '<cmd>:Lazy<cr>')
+vim.keymap.set('n', '<leader>lu', '<cmd>:Lazy update<cr>')
+vim.keymap.set('n', '<leader>li', '<cmd>:Lazy install<cr>')

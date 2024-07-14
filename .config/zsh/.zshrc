@@ -127,7 +127,10 @@ fi
 source $HOME/.config/zsh/.aliases
 
 # Enable vi mode
-bindkey -v
+#bindkey -v
+
+# Make backspace delete word
+bindkey "^H" backward-delete-word
 
 # Enable fuzzy finder
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh

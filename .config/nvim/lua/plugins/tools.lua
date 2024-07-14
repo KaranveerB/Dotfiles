@@ -1,7 +1,8 @@
 LazyVim = require("lazyvim.util")
 
 return {
-  { 
+  {
+    -- TODO: setup fzy
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
@@ -53,7 +54,27 @@ return {
     end
   },
   {
+    'j-hui/fidget.nvim',
+    lazy = false,
+    opts = {
+      progress = {
+        display = {
+          render_limit = 16,
+        },
+      },
+      notification = {
+        override_vim_notify = true,
+      },
+      integration = {
+        ['nvim-tree'] = {
+          enable = true,
+        },
+      }
+    },
+  },
+  {
     'rcarriga/nvim-notify',
+    enabled = false,
     opts = {
       stages = "static",
       timeout = 3000,
@@ -86,5 +107,10 @@ return {
       vim.g.undotree_WindowLayout = 3 -- Right side
       vim.g.undotree_SplitWidth = 40
     end
+  },
+  {
+    -- sudo read/write from nvim
+    'lambdalisue/vim-suda',
+    -- provides `:SudaRead` and `:SudaWrite
   }
 }
