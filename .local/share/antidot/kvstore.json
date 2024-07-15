@@ -7,7 +7,6 @@
     "GTK2_RC_FILES": "${XDG_CONFIG_HOME}/gtk-2.0/gtkrc",
     "RUSTUP_HOME": "${XDG_DATA_HOME}/rustup",
     "STACK_ROOT": "${XDG_DATA_HOME}/stack",
-    "_JAVA_OPTIONS": "-Djava.util.prefs.userRoot=\"$XDG_CONFIG_HOME\"/java",
     "_Z_DATA": "${XDG_CACHE_HOME}/z",
     "npm_config_cache": "${XDG_CACHE_HOME}/npm"
   },
