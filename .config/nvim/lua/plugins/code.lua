@@ -3,7 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     event = 'BufRead',
-    config = {
+    opts = {
         ensure_installed = {
           'bash',
           'c',

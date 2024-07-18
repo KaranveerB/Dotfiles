@@ -1,7 +1,7 @@
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    'catppuccin/nvim',
+    name = 'catppuccin',
     lazy = false,
     priority = 1000,
     opts = {
@@ -23,10 +23,10 @@ return {
         native_lsp = {
           enabled = true,
           underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
+            errors = { 'undercurl' },
+            hints = { 'undercurl' },
+            warnings = { 'undercurl' },
+            information = { 'undercurl' },
           },
         },
         navic = { enabled = false, custom_bg = "lualine" },
@@ -42,10 +42,12 @@ return {
       },
     },
     config = function()
-      vim.cmd('colorscheme catppuccin-mocha')
+      vim.cmd.colorscheme('catppuccin-mocha')
       -- Make bg color the same as kitty terminal's. Required for transparency.
-      vim.cmd('highlight Normal guibg=#080B1A')
-      vim.cmd('highlight NormalNC guibg=#080B1A')
+      vim.api.nvim_set_hl(0, 'Normal', { bg='#080b1a' })
+      vim.api.nvim_set_hl(0, 'NormalNC', { bg='#080b1a' })
+      -- Make inlay hints less distrating
+      vim.api.nvim_set_hl(0, 'LspInlayHint', { bg='black', fg='#606060'})
     end,
   }
 }

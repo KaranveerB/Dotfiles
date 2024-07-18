@@ -1,4 +1,4 @@
-vim.g.mapleader = " "     
+vim.g.mapleader = " "
 
 -- 24 bit colors
 vim.opt.termguicolors = true

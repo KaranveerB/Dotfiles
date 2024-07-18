@@ -21,7 +21,7 @@ return {
     'nvim-tree/nvim-tree.lua',
     -- event = "NoBufTrig", -- not working atm
     lazy = false, -- can be removed after NoBufTrig works properly
-    config = {
+    opts = {
       view = {
         width = 30,
       },
