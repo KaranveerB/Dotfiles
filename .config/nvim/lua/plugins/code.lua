@@ -4,21 +4,21 @@ return {
     build = ':TSUpdate',
     event = 'BufRead',
     opts = {
-        ensure_installed = {
-          'bash',
-          'c',
-          'cpp',
-          'haskell',
-          'lua',
-          'java',
-          'javascript',
-          'python',
-          'rust',
-          'sh',
-        },
-        sync_install = false, -- async install
-        highlight = { enable = true },
-        indent = { enable = true },  
+      ensure_installed = {
+        'bash',
+        'c',
+        'cpp',
+        'haskell',
+        'lua',
+        'java',
+        'javascript',
+        'python',
+        'rust',
+        'sh',
+      },
+      sync_install = false, -- async install
+      highlight = { enable = true },
+      indent = { enable = true },
     },
   },
   {
@@ -28,10 +28,5 @@ return {
   {
     'nvim-treesitter/nvim-treesitter-context',
     lazy = 'VeryLazy',
-  },
-  {
-    -- colourized brackets/delimiters
-    'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git',
-    event = 'VeryLazy',
   },
 }

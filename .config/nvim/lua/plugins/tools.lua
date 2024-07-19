@@ -112,5 +112,11 @@ return {
     -- sudo read/write from nvim
     'lambdalisue/vim-suda',
     -- provides `:SudaRead` and `:SudaWrite
+    event = "VeryLazy"
+  },
+  {
+    'tyru/capture.vim',
+    -- Provides `:Capture` that allows you to cpature the output of other :Ex commands into a buffer
+    event = "VeryLazy",
   }
 }

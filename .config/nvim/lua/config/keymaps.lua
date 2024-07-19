@@ -1,5 +1,5 @@
-vim.keymap.set('n', 'j', 'v:count1 <= 5 ? "gj" : "j"', { expr = true, noremap = true })
-vim.keymap.set('n', 'k', 'v:count1 < 5 ? "gk" : "k"', { expr = true, noremap = true })
+vim.keymap.set({'n', 'v'}, 'j', 'v:count1 <= 5 ? "gj" : "j"', { expr = true, noremap = true })
+vim.keymap.set({'n', 'v'}, 'k', 'v:count1 < 5 ? "gk" : "k"', { expr = true, noremap = true })
 
 vim.keymap.set('i', '<C-h>', '<Left>',  {noremap = true})
 vim.keymap.set('i', '<C-j>', '<Down>',  {noremap = true})
