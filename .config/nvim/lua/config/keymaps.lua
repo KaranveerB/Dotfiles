@@ -16,10 +16,6 @@ vim.keymap.set('n', '<C-l>', '<C-w>l',  {noremap = true})
 -- Make C-BS work as expected
 vim.keymap.set('i', '<C-BS>', '<C-W>', {noremap = true})
 
-vim.keymap.set('n', '<leader>df', '<cmd>lua vim.diagnostic.open_float()<cr>')
-vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-
 -- move line up/down (stolen from the primeagen)
 -- explanation: https://youtu.be/MuUrCcvE-Yw?t=480
 -- TODO: WRONG{

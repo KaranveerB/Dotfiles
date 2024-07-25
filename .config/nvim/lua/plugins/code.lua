@@ -27,6 +27,6 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
-    lazy = 'VeryLazy',
+    event = 'VeryLazy',
   },
 }
