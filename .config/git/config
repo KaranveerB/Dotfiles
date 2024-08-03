@@ -1,0 +1,8 @@
+[user]
+	email = 52545097+KaranveerB@users.noreply.github.com
+	name = KaranveerB
+[push]
+	autoSetupRemote = true
+
+[includeIf "gitdir:~/proj/arch/"]
+	path = config-archlinux
