@@ -1,14 +1,16 @@
 return {
   {
+    -- maybe use flash at some point?
     'ggandor/leap.nvim',
     lazy = false, -- leap lazy loads itself
     dependencies = {
       'tpope/vim-repeat',
     },
     keys = {
-      { 's', mode = { 'n', 'x', 'o' }, desc = 'Leap Forward to' },
-      { 'S', mode = { 'n', 'x', 'o' }, desc = 'Leap Backward to' },
-      { 'gs', mode = { 'n', 'x', 'o' }, desc = 'Leap from Windows' },
+      { '<CR>', '<Plug>(leap-forward)', mode = { 'n', 'x', 'o' }, desc = 'Leap forward to' },
+      { '<S-CR>', '<Plug>(leap-backward)', mode = { 'n', 'x', 'o' }, desc = 'Leap backward to' },
+      { 'g<CR>', '<Plug>(leap-from-window)', mode = { 'n', 'x', 'o' }, desc = 'Leap from Windows' },
+      { 'g<CR>', '<Plug>(leap-from-window)', mode = { 'n', 'x', 'o' }, desc = 'Leap from Windows' },
     },
     config = function(_, opts)
       local leap = require('leap')
@@ -16,11 +18,13 @@ return {
       for k, v in pairs(opts) do
         leap.opts[k] = v
       end
-      leap.add_default_mappings(true)
+      leap.add_default_mappings(false)
       vim.keymap.del({ 'x', 'o' }, 'x')
       vim.keymap.del({ 'x', 'o' }, 'X')
-
-      user.set_repeat_keys('<enter>', '<backspace>')
+      vim.keymap.del({ 'n', 'x', 'o' }, 's')
+      vim.keymap.del({ 'n', 'x', 'o' }, 'S')
+      vim.keymap.del({ 'n', 'x', 'o' }, 'gs')
+      --user.set_repeat_keys('<enter>', '<backspace>')
     end,
   },
   {
@@ -36,10 +40,10 @@ return {
       os.execute('cp ' .. src .. '*.py ' .. dst)
     end,
     keys = {
-      { '<C-h>', function() require('kitty-navigator').navigateLeft() end, desc = 'Move left a vim/kitty split'},
-      { '<C-j>', function() require('kitty-navigator').navigateDown() end, desc = 'Move down a vim/kitty split'},
-      { '<C-k>', function() require('kitty-navigator').navigateUp() end, desc = 'Move up a vim/kitty split'},
-      { '<C-l>', function() require('kitty-navigator').navigateRight() end, desc = 'Move right a vim/kitty split'},
+      { '<C-h>', function() require('kitty-navigator').navigateLeft() end, mode = {'n', 's'},  desc = 'Move left a vim/kitty split'},
+      { '<C-j>', function() require('kitty-navigator').navigateDown() end,  mode = {'n', 's'},desc = 'Move down a vim/kitty split'},
+      { '<C-k>', function() require('kitty-navigator').navigateUp() end, mode = {'n', 's'}, desc = 'Move up a vim/kitty split'},
+      { '<C-l>', function() require('kitty-navigator').navigateRight() end, mode = {'n', 's'},desc = 'Move right a vim/kitty split'},
     }
   },
 }

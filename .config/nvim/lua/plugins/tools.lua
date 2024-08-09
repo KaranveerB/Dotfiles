@@ -8,12 +8,16 @@ return {
     keys = {
       { '<leader>ff', function() require('telescope.builtin').find_files() end,
         desc = 'Find files (root dir)' },
+      { '<leader>fF', function() require('telescope.builtin').find_files( {root = false} ) end,
+        desc = 'Find files (root dir)' },
       { '<leader>fg', function() require('telescope.builtin').live_grep() end,
         desc = 'Grep files (root dir)' },
-      { '<leader>fG', function() require('telescope.builtin').live_grep({root = false}) end,
+      { '<leader>fG', function() require('telescope.builtin').live_grep( {root = false} ) end,
         desc = 'Grep files (cwd)' },
       { '<leader>fh', function() require('telescope.builtin').help_tags() end,
         desc = 'Find help' },
+      { '<leader>fk', function() require('telescope.builtin').keymaps() end,
+        desc = 'Find keymap' },
     },
   },
   {

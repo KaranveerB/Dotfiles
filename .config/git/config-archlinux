@@ -1,6 +1,8 @@
+# vim:syntax=gitconfig
+
 [user]
 	email = 5110-karanveerb@users.noreply.gitlab.archlinux.org
 	name = KaranveerB
 [core]
-	sshCommand = 'ssh -i ~/.ssh/arch_gitlab_ed25519'
+	sshCommand = ssh -i ~/.ssh/arch_gitlab_ed25519
 
