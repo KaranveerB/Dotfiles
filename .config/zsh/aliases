@@ -210,6 +210,6 @@ alias vpoly="$EDITOR ~/.config/polybar/"
 alias vpico="$EDITOR ~/.config/picom/picom.conf"
 alias vterm="$EDITOR ~/.config/kitty/kitty.conf"
 alias vvim="$EDITOR ~/.config/nvim/"
-alias vzenv="$EDITOR ~/.config/zsh/.zshenv"
-alias vzrc="$EDITOR ~/.config/zsh/.zshrc"
+alias vzenv="$EDITOR ~/.config/zsh/zshenv"
+alias vzrc="$EDITOR ~/.config/zsh/zshrc"
 # }}}
