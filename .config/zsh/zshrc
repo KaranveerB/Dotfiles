@@ -84,7 +84,7 @@ plugins=(
   archlinux
   #copydir
   copyfile
-  dirhistory
+  #dirhistory
   # emoji
   git
   # gitignore

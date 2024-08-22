@@ -2,6 +2,7 @@ return {
   {
     -- maybe use flash at some point?
     'ggandor/leap.nvim',
+    enable = false,
     lazy = false, -- leap lazy loads itself
     dependencies = {
       'tpope/vim-repeat',
@@ -46,4 +47,20 @@ return {
       { '<C-l>', function() require('kitty-navigator').navigateRight() end, mode = {'n', 's'},desc = 'Move right a vim/kitty split'},
     }
   },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {
+      jump = {
+        autojump = false, -- works oddly with multiple visible registers when on
+      }
+    },
+    keys = {
+      { "<CR>", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "<S-CR>", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<C-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
+  }
 }

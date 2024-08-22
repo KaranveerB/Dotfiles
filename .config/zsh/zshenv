@@ -23,6 +23,8 @@ export JAVA_HOME="/usr/lib/jvm/default-runtime"
 export npm_config_prefix="$HOME/.local"
 export GPG_TTY=$(tty)
 
+if [ -f "$ZDOTDIR/projenv" ]; then source "$ZDOTDIR/projenv"; fi
+
 # Dotfile management with antigen
 if [ -f "$XDG_DATA_HOME/antidot/env.sh" ]; then source "$XDG_DATA_HOME/antidot/env.sh"; fi
 if [ -f "$XDG_DATA_HOME/antidot/alias.sh" ]; then source "$XDG_DATA_HOME/antidot/alias.sh"; fi

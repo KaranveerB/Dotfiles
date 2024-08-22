@@ -24,9 +24,11 @@ vim.opt.breakindent = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
--- tabs
+-- indents
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.smartindent = false -- covered by treesitter
+
 
 -- visual whitespace
 vim.opt.list = true
