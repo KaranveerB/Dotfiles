@@ -148,10 +148,15 @@ return {
       server = {
         cmd = function()
           local mason_registry = require("mason-registry")
-          local ra_binary = mason_registry.is_installed("rust-analyzer")
-              and mason_registry.get_package("rust-analyzer"):get_install_path() .. "/rust-analyzer"
-            or "rust-analyzer"
-          return { ra_binary }
+          local ra_dir = mason_registry.is_installed("rust-analyzer")
+            and mason_registry.get_package("rust-analyzer"):get_install_path()
+          for name, type in vim.fs.dir(ra_dir) do
+            if type == "file" and vim.startswith(name, "rust-analyzer") then
+              return { ra_dir .. "/" .. name }
+            end
+          end
+
+          LazyVim.error("**rust-analyzer** not found in " .. ra_dir .. ".", { title = "rustaceanvim" })
         end,
         on_attach = function(_, bufnr)
           vim.keymap.set("n", "<leader>dR", function()
@@ -187,12 +192,6 @@ return {
     },
     config = function(_, opts)
       vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {})
-      if vim.fn.executable("rust-analyzer") == 0 then
-        LazyVim.error(
-          "**rust-analyzer** not found in PATH, please install it.\nhttps://rust-analyzer.github.io/",
-          { title = "rustaceanvim" }
-        )
-      end
     end,
   },
   {
