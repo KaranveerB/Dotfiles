@@ -3,26 +3,27 @@ LazyVim = require("lazyvim.util")
 return {
   {
     -- TODO: setup fzy
-    'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    -- stylua: ignore
     keys = {
-      { '<leader>ff', function() require('telescope.builtin').find_files() end,
-        desc = 'Find files (root dir)' },
-      { '<leader>fF', function() require('telescope.builtin').find_files( {root = false} ) end,
-        desc = 'Find files (root dir)' },
-      { '<leader>fg', function() require('telescope.builtin').live_grep() end,
-        desc = 'Grep files (root dir)' },
-      { '<leader>fG', function() require('telescope.builtin').live_grep( {root = false} ) end,
-        desc = 'Grep files (cwd)' },
-      { '<leader>fh', function() require('telescope.builtin').help_tags() end,
-        desc = 'Find help' },
-      { '<leader>fk', function() require('telescope.builtin').keymaps() end,
-        desc = 'Find keymap' },
+      { "<leader>ff", function() require("telescope.builtin").find_files() end,
+        desc = "Find files (root dir)" },
+      { "<leader>fF", function() require("telescope.builtin").find_files( {root = false} ) end,
+        desc = "Find files (root dir)" },
+      { "<leader>fg", function() require("telescope.builtin").live_grep() end,
+        desc = "Grep files (root dir)" },
+      { "<leader>fG", function() require("telescope.builtin").live_grep( {root = false} ) end,
+        desc = "Grep files (cwd)" },
+      { "<leader>fh", function() require("telescope.builtin").help_tags() end,
+        desc = "Find help" },
+      { "<leader>fk", function() require("telescope.builtin").keymaps() end,
+        desc = "Find keymap" },
     },
   },
   {
     -- maybe consider nvim-telescope/telescope-file-browser.nvim
-    'nvim-tree/nvim-tree.lua',
+    "nvim-tree/nvim-tree.lua",
     -- event = "NoBufTrig", -- not working atm
     lazy = false, -- can be removed after NoBufTrig works properly
     opts = {
@@ -34,31 +35,32 @@ return {
       },
       hijack_cursor = true,
     },
+    --stylua: ignore
     keys = {
-      { '<C-n>', function() require('nvim-tree.api').tree.toggle() end,
-        desc = 'Open nvim-tree' },
+      { "<C-n>", function() require("nvim-tree.api").tree.toggle() end,
+        desc = "Open nvim-tree" },
     },
     on_attach = {
       function()
-        local api = require('nvim-tree.api')
+        local api = require("nvim-tree.api")
         -- vim.keymap.set('n', 'l', api.node.open.preview()) -- wrong
-      end
+      end,
     },
     init = function()
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
-    end
+    end,
   },
   {
     -- hex color highlighting
-    'NvChad/nvim-colorizer.lua',
-    event = 'BufRead',
+    "NvChad/nvim-colorizer.lua",
+    event = "BufRead",
     config = function()
-      require 'colorizer'.setup()
-    end
+      require("colorizer").setup()
+    end,
   },
   {
-    'j-hui/fidget.nvim',
+    "j-hui/fidget.nvim",
     lazy = false,
     opts = {
       progress = {
@@ -70,14 +72,14 @@ return {
         override_vim_notify = true,
       },
       integration = {
-        ['nvim-tree'] = {
+        ["nvim-tree"] = {
           enable = true,
         },
-      }
+      },
     },
   },
   {
-    'rcarriga/nvim-notify',
+    "rcarriga/nvim-notify",
     enabled = false,
     opts = {
       stages = "static",
@@ -93,34 +95,42 @@ return {
       end,
     },
     keys = {
-      { '<leader>un', function() require('notify').dismiss({ silent = true, pending = false }) end,
-        desc = 'Dismiss notifications' },
-    },-- when noice is not enabled, install notify on VeryLazy
+      {
+        "<leader>un",
+        function()
+          require("notify").dismiss({ silent = true, pending = false })
+        end,
+        desc = "Dismiss notifications",
+      },
+    }, -- when noice is not enabled, install notify on VeryLazy
     init = function()
       if not LazyVim.has("noice.nvim") then
-        LazyVim.on_very_lazy(function() vim.notify = require("notify") end)
+        LazyVim.on_very_lazy(function()
+          vim.notify = require("notify")
+        end)
       end
     end,
   },
   {
-    'mbbill/undotree',
+    "mbbill/undotree",
+    -- stylua: ignore
     keys = {
-        {'<leader>ut', vim.cmd.UndotreeToggle }
+        { "<leader>ut" , vim.cmd.UndotreeToggle }
     },
     config = function()
       vim.g.undotree_WindowLayout = 3 -- Right side
       vim.g.undotree_SplitWidth = 40
-    end
+    end,
   },
   {
     -- sudo read/write from nvim
-    'lambdalisue/vim-suda',
+    "lambdalisue/vim-suda",
     -- provides `:SudaRead` and `:SudaWrite
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
   {
-    'tyru/capture.vim',
+    "tyru/capture.vim",
     -- Provides `:Capture` that allows you to cpature the output of other :Ex commands into a buffer
     event = "VeryLazy",
-  }
+  },
 }

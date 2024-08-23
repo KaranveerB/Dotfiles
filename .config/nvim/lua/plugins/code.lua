@@ -1,20 +1,20 @@
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    event = 'BufRead',
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = "BufRead",
     opts = {
       ensure_installed = {
-        'bash',
-        'c',
-        'cpp',
-        'haskell',
-        'lua',
-        'java',
-        'javascript',
-        'python',
-        'rust',
-        'sh',
+        "bash",
+        "c",
+        "cpp",
+        "haskell",
+        "lua",
+        "java",
+        "javascript",
+        "python",
+        "rust",
+        "sh",
       },
       sync_install = false, -- async install
       highlight = { enable = true },
@@ -22,12 +22,12 @@ return {
     },
   },
   {
-    'rightson/vim-p4-syntax',
-    ft = 'p4',
+    "rightson/vim-p4-syntax",
+    ft = "p4",
   },
   {
-    'nvim-treesitter/nvim-treesitter-context',
-    event = 'VeryLazy',
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
     config = {
       max_lines = 5,
       multiline_threshold = 2,
