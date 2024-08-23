@@ -1,3 +1,5 @@
+LazyVim = require("lazyvim.util")
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -155,7 +157,7 @@ return {
               return { ra_dir .. "/" .. name }
             end
           end
-
+          -- Will likely get other scary errors before you see this, but whatever.
           LazyVim.error("**rust-analyzer** not found in " .. ra_dir .. ".", { title = "rustaceanvim" })
         end,
         on_attach = function(_, bufnr)
