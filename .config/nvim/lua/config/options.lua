@@ -1,4 +1,7 @@
+vim.keymap.set("n", "<Space>", "<Nop>")
 vim.g.mapleader = " "
+-- TODO: Figure out a way to make this <C-Space>
+vim.g.maplocalleader = "  "
 
 -- 24 bit colors
 vim.opt.termguicolors = true

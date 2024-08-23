@@ -52,10 +52,25 @@ return {
       -- others
       { "<leader>gg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
       { "<leader>gs", function() require("dap").session() end, desc = "Session" },
-      { "leader>gR", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
+      { "<leader>gR", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
       { "<leader>gt", function() require("dap").terminate() end, desc = "Terminate" },
       { "<leader>gw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
-    }
-,
+    },
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "mrcjkb/rustaceanvim", -- maybe there is a better way to do this.
+    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("rustaceanvim.neotest"),
+        },
+      })
+    end,
   },
 }
