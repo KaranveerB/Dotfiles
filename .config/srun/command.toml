@@ -1,0 +1,40 @@
+[tlp.boost]
+desc = "manage tlp performance configs"
+enable = { command = "sudo mv /etc/tlp.d/11-boost.conf{.disabled,} && sudo tlp start" }
+disable = { command = "sudo mv /etc/tlp.d/11-boost.conf{,.disabled} && sudo tlp start" }
+
+[wl]
+desc = "manage wireless cards"
+wlman = { command = "sudo iw wlp166s0 set type managed", desc = "set wifi card in managed mode" }
+wlmon = { command = "sudo iw wlp166s0 set monitor none", desc = "set wifi card in monitor mode" }
+wlup = { command = "sudo ip link set wlp166s0 up", desc = "set wifi card up" }
+wldown = { command = "sudo ip link set wlp166s0 down", desc = "set wifi card down" }
+
+[res]
+desc = "restart/redo various things"
+bl = { command = "sudo systemctl restart bluetooth", desc = "restart bluetooth" }
+poly = { command = "sh ~/.config/polybar/launch.sh", desc = "restart polybar" }
+altswap = { command = "setxkbmap -option altwin:swap_alt_win", desc = "redo alt/win swap" }
+xset = { command = "xset r rate 450 60", desc = "redo xset rate" }
+
+[rsync.mount]
+# The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
+drive = { command = "rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s" }
+
+[git]
+# https://stackoverflow.com/a/21189710
+init-branches = { command = "for b in `git branch -r | grep -v -- '->'`; do echo $b; done", a = {}}
+
+[pac]
+desc = "pacman commands"
+
+[pac.list]
+desc = "list pacman pacakges from log"
+command = ""
+in = { command = "grep -i installed /var/log/pacman.log", desc = "installed package list" }
+upg = { command = "grep -i upgraded /var/log/pacman.log", desc = "upgraded package list" }
+rem = { command = "grep -i removed /var/log/pacman.log", desc = "removed package list" }
+
+[zplug]
+# TODO: DOES not work
+upg = { command = "zplug install && zplug update && zplug load && zplug clean", desc = "upgrade zplug plugins" }

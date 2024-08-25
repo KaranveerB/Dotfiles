@@ -161,7 +161,8 @@ return {
           LazyVim.error("**rust-analyzer** not found in " .. ra_dir .. ".", { title = "rustaceanvim" })
         end,
         on_attach = function(_, bufnr)
-          vim.keymap.set("n", "<localleader>da", function()
+          -- codeAction is a super-set of the rust_analyzer one.
+          vim.keymap.set("n", "<leader>da", function()
             vim.cmd.RustLsp("codeAction")
           end, { desc = "Code Action", buffer = bufnr })
           vim.keymap.set("n", "<localleader>gr", function()

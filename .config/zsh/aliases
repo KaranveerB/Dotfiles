@@ -13,19 +13,12 @@ alias mkcc="make -j$(nproc) CC='ccache gcc' CPP='ccache g++' CXX='ccache g++'"
 function d2h() { printf '%x' $1 }
 function findsymbol() { find . | grep "\.so\|\.o" |  xargs -I % bash -c "nm % | grep $1 && echo %" 2>&/dev/null }
 
-# TMP RCLONE
-alias gdrivemount="rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s"
-# TODO: this is crap. Do something about it later. Likely polybar stuff mixed with dwm commands and rofi.
-# The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
-
 # HOT FIX
-alias fix-bluetooth="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
-alias fix-bl="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
-alias resbl="sudo systemctl restart bluetooth"
-alias resaltswap="setxkbmap -option altwin:swap_alt_win &"
-alias enablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 headset-head-unit"
-alias disablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 a2dp-sink-aac"
-alias resxset="xset r rate 450 60"
+# TODO: Fix these and Move to srun
+#alias fix-bluetooth="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
+#alias fix-bl="pactl set-default-sink bluez_input.AC:12:2F:F0:A9:C8.a2dp-sink"
+#alias enablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 headset-head-unit"
+#alias disablemic="pactl set-card-profile bluez_card.AC_12_2F_F0_A9_C8 a2dp-sink-aac"
 
 # barrier
 alias barrierauto="barrier --name ARE --daemon 10.0.0.123:24800"
@@ -78,8 +71,6 @@ alias gcamsg="git add * && git commit -m commit"
 
 # kitty
 alias kit="kitten"
-#if [ "$TERM" = "xterm-kitty" ]; then alias ssh="kitty +kitten ssh"; fi
-# specifically checked cus if you kitty ssh when you should ssh, you're gonna have a bad time
 alias kssh="kitten ssh"
 
 function t() { kitty -d=$PWD & disown }
@@ -104,10 +95,6 @@ function pacupg() { paru && echo "running tldr -u"; tldr -u; exit_code=$?; polyh
 alias pacq="pacman -Q"
 alias pacqq="pacman -Qq"
 alias pacqi="pacman -Qi"
-alias pacinl="grep -i installed /var/log/pacman.log"
-alias pacupgl="grep -i upgraded /var/log/pacman.log"
-alias pacrel="grep -i removed /var/log/pacman.log"
-alias pacreml="grep -i removed /var/log/pacman.log"
 # }}}
 
 # picoctf
@@ -130,7 +117,6 @@ function polyhook() {
 		echo "Invalid number of arguments for polyhook()"
 	fi
 }
-alias startpoly="sh ~/.config/polybar/launch.sh"
 # }}}}
 
 # pulseeffects
@@ -151,19 +137,8 @@ alias sudo="sudo -v; sudo"
 alias inhibitlid="echo 'Ctrl+C to re-enable sleep on lid close' && systemd-inhibit --what=handle-lid-switch sleep 1d"
 alias inhibitsleep="systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target sleep 1d"
 
-# tlp
-alias tlpboost="sudo mv /etc/tlp.d/11-boost.conf.disabled /etc/tlp.d/11-boost.conf && sudo tlp start"
-alias tlpnoboost="sudo mv /etc/tlp.d/11-boost.conf /etc/tlp.d/11-boost.conf.disabled && sudo tlp start"
-
 # valgrind
 alias qvalgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s "
-
-# {{{ wifi
-alias wlman="sudo iw wlp166s0 set type managed"
-alias wlmon="sudo iw wlp166s0 set monitor none"
-alias wlup="sudo ip link set wlp166s0 up"
-alias wldown="sudo ip link set wlp166s0 down"
-# }}}
 
 # wine
 alias jwine="LANG=ja_JP.UTF-8 wine"
@@ -205,7 +180,7 @@ alias czsh="cd ~/.config/zsh/"
 
 # {{{ configuration
 # (alias names make less sense if you don't use vim)
-alias vali="$EDITOR ~/.config/zsh/.aliases"
+alias vali="$EDITOR ~/.config/zsh/aliases"
 alias vpoly="$EDITOR ~/.config/polybar/"
 alias vpico="$EDITOR ~/.config/picom/picom.conf"
 alias vterm="$EDITOR ~/.config/kitty/kitty.conf"
