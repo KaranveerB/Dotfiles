@@ -70,3 +70,7 @@ sync_etc "btrbk"
 sync "/etc/systemd" "logind.conf.d"
 sync "/etc/systemd" "sleep.conf.d"
 sync "/etc/udev/rules.d" "99-lowbat.rules"
+
+# pacman
+pacman -Qqen > "extras/native-pkg.list" # includes chaotic-aur
+pacman -Qqem > "extras/foreign-pkg.list"

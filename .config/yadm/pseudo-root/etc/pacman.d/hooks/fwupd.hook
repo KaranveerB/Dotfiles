@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/lib/fwupd/efi/fwupdx64.efi
+
+[Action]
+Description = Signing fwupd EFI binary for Secure Boot...
+When = PostTransaction
+Exec = /usr/bin/sbsign --key /etc/refind.d/keys/db/db.key --cert /etc/refind.d/keys/db/db.pem /usr/lib/fwupd/efi/fwupdx64.efi
+Depends = sbsigntools

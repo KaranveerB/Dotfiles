@@ -1,6 +1,5 @@
 # vim:foldmethod=marker
 # vim:filetype=zsh
-
 alias gbtmp="git branch tmp"
 alias gcotmp="git checkout tmp"
 alias gbdtmp="git branch -D tmp"
@@ -128,6 +127,9 @@ alias py="python3"
 # rsync
 # https://www.reddit.com/r/linuxquestions/comments/ne9vno/comment/gyfd0ps/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 alias rsynccp="rsync --archive --modify-window=2 --progress --verbose --itemize-changes --stats --human-readable"
+
+# srun
+alias r="srun"
 
 # sudo
 ## refresh sudo timeout each time sudo is used
