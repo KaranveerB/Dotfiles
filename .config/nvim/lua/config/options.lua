@@ -40,3 +40,6 @@ vim.opt.listchars = {
   trail = "·",
   nbsp = "␣",
 }
+
+-- conceal
+vim.opt.conceallevel = 1

@@ -17,9 +17,9 @@ poly = { command = "sh ~/.config/polybar/launch.sh", desc = "restart polybar" }
 altswap = { command = "setxkbmap -option altwin:swap_alt_win", desc = "redo alt/win swap" }
 xset = { command = "xset r rate 450 60", desc = "redo xset rate" }
 
-[rsync.mount]
+[rsync]
 # The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
-drive = { command = "rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s" }
+sch = { command = "rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s" }
 
 [git]
 # https://stackoverflow.com/a/21189710
