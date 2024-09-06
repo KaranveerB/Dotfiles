@@ -19,7 +19,7 @@ xset = { command = "xset r rate 450 60", desc = "redo xset rate" }
 
 [rsync]
 # The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
-sch = { command = "rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s" }
+sch = { command = "rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s", desc = "mount school drive" }
 
 [git]
 # https://stackoverflow.com/a/21189710

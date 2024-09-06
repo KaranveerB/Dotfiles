@@ -14,7 +14,6 @@ end
 return {
   {
     "mfussenegger/nvim-dap",
-    lazy = false,
     dependencies = {
       "williamboman/mason.nvim",
       "theHamsta/nvim-dap-virtual-text",

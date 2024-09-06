@@ -12,6 +12,8 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/nvim-cmp",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
     },
     build = ":MasonUpdate", -- doesn't actually update plugins unfortunately.
     config = function()
@@ -85,11 +87,16 @@ return {
       cmp.setup({
         snippet = {
           expand = function(args)
-            -- maybe try lua snip at some point
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            vim.snippet.expand(args.body) -- native neovim snippets
+            -- vim.snippet.expand(args.body) -- native neovim snippets
+            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
           end,
         },
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "luasnip" }, -- For luasnip users.
+        }, {
+          { name = "buffer" },
+        }),
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -99,12 +106,6 @@ return {
           ["<C-;>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item.
           ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
           ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          -- { name = 'luasnip' }, -- For luasnip users.
-        }, {
-          { name = "buffer" },
         }),
       })
 

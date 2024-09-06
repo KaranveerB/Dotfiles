@@ -43,3 +43,6 @@ vim.opt.listchars = {
 
 -- conceal
 vim.opt.conceallevel = 1
+
+-- popup menu
+vim.opt.pumheight = 30

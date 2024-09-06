@@ -24,8 +24,6 @@ return {
   {
     -- maybe consider nvim-telescope/telescope-file-browser.nvim
     "nvim-tree/nvim-tree.lua",
-    -- event = "NoBufTrig", -- not working atm
-    lazy = false, -- can be removed after NoBufTrig works properly
     opts = {
       view = {
         width = 30,

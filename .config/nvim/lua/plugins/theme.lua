@@ -55,6 +55,10 @@ return {
       -- Make concealment replacements more visible
       vim.api.nvim_set_hl(0, 'Conceal', { fg = mocha.teal, bold = false })
       -- alt colour if conflicts: '#ff79c6?
+
+      -- Unused fg highlight ruins syntax highlighting
+      vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { undercurl=true, sp=mocha.overlay0 } )
+      local x = 1;
     end,
   },
 }
