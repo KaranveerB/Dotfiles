@@ -131,4 +131,44 @@ return {
     -- Provides `:Capture` that allows you to cpature the output of other :Ex commands into a buffer
     event = "VeryLazy",
   },
+  {
+    "dfendr/clipboard-image.nvim",
+    enabled = false,
+    -- Maybe see if ctrl+shift+v can work?
+    event = "VeryLazy",
+    opts = {
+      tex = {
+        img_dir = { "res" },
+        img_handler = function(img)
+          if vim.endswith(img.path, ".png") then
+            local new_path = img.path:gsub(".png", "jpg")
+            os.execute("magick convert " .. img.path .. " " .. new_path)
+            vim.notify(new_path)
+            os.remove(img.path)
+          end
+        end,
+        -- This won't actually work because I can't return the file path :(
+        -- (Probably at least. Didn't test it)
+      },
+    },
+  },
+  {
+    "HakonHarnes/img-clip.nvim",
+    event = "VeryLazy",
+    opts = {
+      filetypes = {
+        tex = {
+          dir_path = "res",
+          -- Most of my latex docs are in drive so save space.
+          process_cmd = "magick convert - -quality 85 -",
+          template = [[
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{$FILE_PATH}
+\end{figure}
+        ]],
+        },
+      },
+    },
+  },
 }
