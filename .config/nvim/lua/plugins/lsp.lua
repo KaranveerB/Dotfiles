@@ -1,5 +1,20 @@
 LazyVim = require("lazyvim.util")
 
+local function cmp_map(cmp_func, luasnip_check, luasnip_func)
+  return function()
+    local cmp = require("cmp")
+    if cmp.visible() then
+      return cmp_func()
+    elseif luasnip_check() then
+      return luasnip_func()
+    else
+      return false
+    end
+  end
+end
+
+local f = require("utils").f
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -83,12 +98,14 @@ return {
         },
       })
 
+      local luasnip = require("luasnip")
+
       -- setup and config cmp
       cmp.setup({
         snippet = {
           expand = function(args)
             -- vim.snippet.expand(args.body) -- native neovim snippets
-            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+            luasnip.lsp_expand(args.body) -- For `luasnip` users.
           end,
         },
         sources = cmp.config.sources({
@@ -104,8 +121,10 @@ return {
           ["<C-e>"] = cmp.mapping.abort(),
           ["<tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item.
           ["<C-;>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item.
-          ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-          ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+          ["<C-p>"] = cmp_map(f(cmp.select_prev_item, cmp_select), f(luasnip.jumpable, -1), f(luasnip.jump, -1)),
+          --["<C-p>"] = cmp.select_prev_item(cmp_select)),
+          --["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+          ["<C-n>"] = cmp_map(f(cmp.select_next_item, cmp_select), f(luasnip.jumpable, 1), f(luasnip.jump, 1)),
         }),
       })
 

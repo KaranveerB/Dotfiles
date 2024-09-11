@@ -38,3 +38,7 @@ rem = { command = "grep -i removed /var/log/pacman.log", desc = "removed package
 [zplug]
 # TODO: DOES not work
 upg = { command = "zplug install && zplug update && zplug load && zplug clean", desc = "upgrade zplug plugins" }
+
+[tasker]
+desc = "remotely control phone"
+release-bl = { command = 'echo "https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?apikey=$(cat ~/.secrets/join.apikey)&deviceNames=S22%20Ultra&text=release-buds-fe&title=Galaxy%20Buds%20FE%20released&category=silently%20notify"', desc = "release galaxy buds fe" }

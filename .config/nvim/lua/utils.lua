@@ -1,5 +1,12 @@
 local M = {}
 
+M.f = function(f, ...)
+  local args = {...}
+  return function()
+    return f(unpack(args))
+  end
+end
+
 -- path is relative to nvim_config_dir/lua directory.
 -- Determines module name by replacing '/' with '.' so modules must be a child
 -- of the nvim_config_dir/lua directory.

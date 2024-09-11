@@ -26,7 +26,7 @@ return {
     "L3MON4D3/LuaSnip",
     dependencies = {
       "rafamadriz/friendly-snippets",
-      "snippet-converter.nvim",
+      --"snippet-converter.nvim",
       "nvim-lspconfig",
       -- only nvim-cmp is needed, but avoid bludgeoning the lsp config load order.
       -- This may not be necessary.
@@ -38,22 +38,30 @@ return {
     keys = {
       { "<CR>", function() return luasnip_jump(1, "<CR>") end, expr = true, mode = { "i", "s" } },
       { "<S-CR>", function() return luasnip_jump(-1, "<S-CR>") end, mode = { "i", "s" } },
+      -- some keys handled in cmp code in lsp.lua
     },
   },
   {
     -- TODO: Try based on https://github.com/smjonas/snippet-converter.nvim/issues/6 maybe?
     "smjonas/snippet-converter.nvim",
+    enabled = false,
     opts = {
       templates = {
-        transform_snippets = function(snippet, helper)
-          for _, mod in pairs(snippet_modules) do
-            if mod.transform_snippets then
-              --snippet = mod.transform_snippets(snippet, helper)
+        {
+          sources = {
+            vscode_luasnip = { vim.fn.stdpath("data") .. "lazy/friendly-snippets/snippets" },
+          },
+          transform_snippets = function(snippet, helper)
+            vim.notify("worked")
+            for _, mod in pairs(snippet_modules) do
+              if mod.transform_snippets then
+                snippet = mod.transform_snippets(snippet, helper)
+              end
             end
-          end
-          --return snippet
-        end,
-      },
+            return snippet
+          end,
+        },
+      }
     },
   },
 }

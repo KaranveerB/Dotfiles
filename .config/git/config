@@ -6,3 +6,5 @@
 
 [includeIf "gitdir:~/proj/arch/"]
 	path = config-archlinux
+[init]
+	defaultBranch = main
