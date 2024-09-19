@@ -3,6 +3,7 @@ local M = {}
 M.f = function(f, ...)
   local args = {...}
   return function()
+    ---@diagnostic disable-next-line: deprecated
     return f(unpack(args))
   end
 end

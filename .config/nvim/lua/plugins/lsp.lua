@@ -63,7 +63,7 @@ return {
                     enable = false,
                   },
                   diagnostics = {
-                    globals = { "lazy", "vim" },
+                    globals = { "cmp_select", "lazy", "vim" },
                   },
                 },
               },

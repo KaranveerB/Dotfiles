@@ -60,3 +60,8 @@ modeling
 runtime
 matchings
 Scalability
+resizing
+isatty
+heapify
+Quicksort
+inlining

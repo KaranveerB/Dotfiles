@@ -8,13 +8,14 @@ return {
       "tpope/vim-repeat",
     },
     keys = {
-      { "<CR>", "<Plug>(leap-forward)", mode = { "n", "x", "o" }, desc = "Leap forward to" },
+      { "<CR>", "<Plug>(leap-forward)",   mode = { "n", "x", "o" }, desc = "Leap forward to" },
       { "<S-CR>", "<Plug>(leap-backward)", mode = { "n", "x", "o" }, desc = "Leap backward to" },
       { "g<CR>", "<Plug>(leap-from-window)", mode = { "n", "x", "o" }, desc = "Leap from Windows" },
       { "g<CR>", "<Plug>(leap-from-window)", mode = { "n", "x", "o" }, desc = "Leap from Windows" },
     },
     config = function(_, opts)
       local leap = require("leap")
+      --- @diagnostic disable-next-line: unused-local
       local user = require("leap.user")
       for k, v in pairs(opts) do
         leap.opts[k] = v
@@ -42,10 +43,10 @@ return {
     end,
     -- stylua: ignore
     keys = {
-      { '<C-h>', function() require('kitty-navigator').navigateLeft() end, mode = {'n', 's'},  desc = 'Move left a vim/kitty split'},
-      { '<C-j>', function() require('kitty-navigator').navigateDown() end,  mode = {'n', 's'},desc = 'Move down a vim/kitty split'},
-      { '<C-k>', function() require('kitty-navigator').navigateUp() end, mode = {'n', 's'}, desc = 'Move up a vim/kitty split'},
-      { '<C-l>', function() require('kitty-navigator').navigateRight() end, mode = {'n', 's'},desc = 'Move right a vim/kitty split'},
+      { '<C-h>', function() require('kitty-navigator').navigateLeft() end,  mode = {'n', 's'}, desc = 'Move left a vim/kitty split'},
+      { '<C-j>', function() require('kitty-navigator').navigateDown() end,  mode = {'n', 's'}, desc = 'Move down a vim/kitty split'},
+      { '<C-k>', function() require('kitty-navigator').navigateUp() end,    mode = {'n', 's'}, desc = 'Move up a vim/kitty split'},
+      { '<C-l>', function() require('kitty-navigator').navigateRight() end, mode = {'n', 's'}, desc = 'Move right a vim/kitty split'},
     }
 ,
   },
@@ -57,13 +58,12 @@ return {
         autojump = false, -- works oddly with multiple visible registers when on
       },
     },
-    -- stylua: ignore
     keys = {
-      { "<CR>", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "<CR>",   mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       { "<S-CR>", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<C-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+      { "r",      mode = "o",               function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R",      mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<C-s>",  mode = { "c" },           function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
 }

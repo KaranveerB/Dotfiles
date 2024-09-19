@@ -160,9 +160,9 @@ return {
         tex = {
           dir_path = "res",
           -- Most of my latex docs are in drive so save space.
-          process_cmd = "magick convert - -quality 85 -",
+          process_cmd = "magick convert - -quality 70 -",
           template = [[
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{$FILE_PATH}
 \end{figure}
