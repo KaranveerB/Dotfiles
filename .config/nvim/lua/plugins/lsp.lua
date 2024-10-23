@@ -17,6 +17,11 @@ local f = require("utils").f
 
 return {
   {
+    "hrsh7th/nvim-cmp",
+    -- tracking: https://github.com/hrsh7th/nvim-cmp/issues/2070
+    commit = "82bd4b59432d44cf5e2a5ce3a40a037a575a6623",
+  },
+  {
     "neovim/nvim-lspconfig",
     lazy = false,
     dependencies = {
@@ -119,8 +124,10 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-'>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item.
-          ["<C-;>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item.
+          ["<tab>"] = cmp.mapping.confirm({ select = true }), -- accept currently selected line
+          -- TODO: Currently broken. Think it's cmp messing up here.
+          ["<C-;>"] = cmp.mapping.confirm({ select = true }), -- accept currently selected line
+
           ["<C-p>"] = cmp_map(f(cmp.select_prev_item, cmp_select), f(luasnip.jumpable, -1), f(luasnip.jump, -1)),
           --["<C-p>"] = cmp.select_prev_item(cmp_select)),
           --["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
@@ -142,6 +149,7 @@ return {
     end,
     -- stylua: ignore
     keys = {
+      { '<C-;>', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, desc = "Enable lsp inlay hints" },
       { '<leader>dh', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, desc = "Enable lsp inlay hints" },
       -- definition
       { '<leader>dd', function() vim.lsp.buf.definition() end, { noremap = true }, desc = "Jump to definition" },
