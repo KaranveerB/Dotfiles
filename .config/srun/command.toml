@@ -32,15 +32,30 @@ desc = "pacman commands"
 
 [pac.list]
 desc = "list pacman pacakges from log"
-command = ""
 in = { command = "grep -i installed /var/log/pacman.log", desc = "installed package list" }
 upg = { command = "grep -i upgraded /var/log/pacman.log", desc = "upgraded package list" }
 rem = { command = "grep -i removed /var/log/pacman.log", desc = "removed package list" }
 
 [zplug]
-# TODO: DOES not work
 upg = { command = "zplug install && zplug update && zplug load && zplug clean", desc = "upgrade zplug plugins" }
 
 [tasker]
 desc = "remotely control phone"
 release-bl = { command = 'curl "https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?apikey=$(cat ~/.secrets/join.apikey)&deviceNames=S22%20Ultra&text=release-buds-fe&title=Galaxy%20Buds%20FE%20released&category=silently%20notify"', desc = "release galaxy buds fe" }
+
+# TODO: Make this so this can be done locally instead of here
+[l.t]
+# would be nice to pass-though args here
+3 = { command = "python tic-tac-toe.py" }
+4 = { command = "python tic-tac-toe.py 4" }
+5 = { command = "python tic-tac-toe.py 5" }
+
+[l.t.dbg]
+3 = { command = "python -m debugpy --wait-for-client --listen 5678 tic-tac-toe.py" }
+4 = { command = "python -m debugpy --wait-for-client --listen 5678 tic-tac-toe.py 4" }
+5 = { command = "python -m debugpy --wait-for-client --listen 5678 tic-tac-toe.py 5" }
+
+[l.t.run]
+3 = { command = "python tic-tac-toe.py --run" }
+4 = { command = "python tic-tac-toe.py --run 4" }
+5 = { command = "python tic-tac-toe.py --run 5" }

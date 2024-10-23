@@ -22,3 +22,16 @@ vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true })
 --vim.keymap.set('v', 'J', ':m >+1<CR>gv=gv')
 --vim.keymap.set('v', 'K', ':m >-2<CR>gv=gv')
 
+-- hide search highlight
+
+vim.keymap.set('n', '<Esc>', function() vim.cmd.nohlsearch() end, { noremap = true })
+
+-- quick fix list
+---- TODO: Bind to a single key maybe, unless you like easy re-focus
+---- TODO: Lua
+vim.keymap.set('n', '<Leader>Q', function() vim.cmd("botright cclose") end, { noremap = true })
+vim.keymap.set('n', '<Leader>q', function() vim.cmd("copen") end, { noremap = true })
+---- TODO: Lua
+vim.api.nvim_set_keymap('n', '<C-q>', ':cnext<CR>', { noremap = true })
+---- TODO: not working?
+vim.api.nvim_set_keymap('n', '<C-Shift-q>', ':cprev<CR>', { noremap = true })

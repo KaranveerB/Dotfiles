@@ -1,0 +1,11 @@
+[Unit]
+Description=Disables TLP boost
+After=multi-user.target
+Before=tlp.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c '[ -f /etc/tlp.d/11-boost.conf ] && /bin/mv /etc/tlp.d/11-boost.conf /etc/tlp.d/11-boost.conf.disabled || exit 0'
+
+[Install]
+WantedBy=multi-user.target

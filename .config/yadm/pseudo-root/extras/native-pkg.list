@@ -52,6 +52,7 @@ cheese
 chromium
 cloc
 cmake
+cmatrix
 compsize
 cpupower
 cups-browsed
@@ -80,6 +81,7 @@ figlet
 firefox
 firefox-tridactyl
 firewalld
+fish
 fprintd
 fwupd
 fzf
@@ -191,6 +193,7 @@ pandoc-cli
 paru
 patchutils
 pavucontrol
+pdftk
 perf
 perl-image-exiftool
 phoronix-test-suite
@@ -202,6 +205,8 @@ playerctl
 poco
 powertop
 pwndbg
+pyenv
+python-debugpy
 python-pip
 python-pipenv
 python-pipx
@@ -302,7 +307,9 @@ wireshark-qt
 wlroots
 x86_energy_perf_policy
 xclip
+xdotool
 xf86-video-vesa
+xiccd
 xorg-bdftopcf
 xorg-docs
 xorg-font-util

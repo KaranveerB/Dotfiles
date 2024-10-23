@@ -1,3 +1,6 @@
+-- vars
+local snippets_dir = vim.fn.stdpath("config") .. "/snippets"
+
 -- helpers
 local utils = require("utils")
 
@@ -15,9 +18,6 @@ for name, snippet in pairs(snippet_modules) do
   if not snippet.add_snippets then
     LazyVim.error("add_snippets function missing in " .. name)
   end
-  if not snippet.transform_snippets then
-    LazyVim.error("transform_snippets function missing in " .. name)
-  end
 end
 
 -- config
@@ -33,6 +33,12 @@ return {
     },
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip.loaders.from_snipmate").lazy_load({ paths = "./snippets/snipmate" })
+      for _, mod in pairs(snippet_modules) do
+        if mod.add_snippets then
+          --mod.add_snippets()
+        end
+      end
     end,
   -- stylua: ignore
     keys = {
@@ -45,23 +51,5 @@ return {
     -- TODO: Try based on https://github.com/smjonas/snippet-converter.nvim/issues/6 maybe?
     "smjonas/snippet-converter.nvim",
     enabled = false,
-    opts = {
-      templates = {
-        {
-          sources = {
-            vscode_luasnip = { vim.fn.stdpath("data") .. "lazy/friendly-snippets/snippets" },
-          },
-          transform_snippets = function(snippet, helper)
-            vim.notify("worked")
-            for _, mod in pairs(snippet_modules) do
-              if mod.transform_snippets then
-                snippet = mod.transform_snippets(snippet, helper)
-              end
-            end
-            return snippet
-          end,
-        },
-      }
-    },
   },
 }

@@ -148,7 +148,7 @@ return {
       -- actions
       { '<leader>da', function() vim.lsp.buf.code_action() end, { noremap = true }, desc = "Select a code action" },
       -- format
-      { '<leader>dF', function() vim.lsp.buf.format() end, { noremap = true }, desc = "Format code" },
+      { '<leader>dF', function() vim.lsp.buf.format() end, { noremap = true }, mode = {"n", "v" }, desc = "Format code" },
       -- select (hover)
       { '<leader>ds', function() vim.lsp.buf.hover() end, { noremap = true }, desc = "Hover over symbol (x2 to jump into)" },
       -- float
@@ -158,6 +158,8 @@ return {
       -- diagnostic jumps
       { '[d', function () vim.diagnostic.goto_prev() end, { noremap = true }, desc = "Go to previous diagnostic" },
       { ']d', function () vim.diagnostic.goto_next() end, { noremap = true }, desc = "Go to next diagnostic", },
+      -- references/usages
+      { 'du', function () vim.lsp.buf.references() end, { noremap = true }, desc = "Find usages", },
     },
   },
   {

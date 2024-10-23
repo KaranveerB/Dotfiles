@@ -34,4 +34,8 @@ return {
       multiline_threshold = 2,
     },
   },
+  {
+    "mechatroner/rainbow_csv",
+    event = "VeryLazy",
+  },
 }

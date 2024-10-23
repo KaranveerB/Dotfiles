@@ -12,6 +12,7 @@ deadd-notification-center-bin
 dptfxtract-static-bin
 droidcam-dkms-git
 fcitx5-skin-arc
+fw-ectool-git
 galaxybudsclient-bin
 gcc11
 gcc11-libs
@@ -19,7 +20,6 @@ ida-free
 jmtpfs
 kingston_fw_updater
 linux-router
-pacleaner
 pacman-static
 pacrepo-git
 pam-fprint-grosshack
@@ -29,3 +29,4 @@ powerstat
 python-pygmsh
 rivercarro
 siji-ng
+zaread-git

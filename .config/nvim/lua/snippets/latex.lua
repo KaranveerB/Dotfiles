@@ -1,14 +1,10 @@
 local M = {}
 
-M.add_snippets = function()
-end
+local ls = require("luasnip")
+local s = ls.snippet
+local t = ls.text_node
 
-M.transform_snippets = function(snippet, helper)
-  vim.notify("worked")
-  --if snippet.trigger == "begin" then
-  --snippet.trigger = "\\begin"
-  return snippet
-  --end
+M.add_snippets = function()
 end
 
 return M

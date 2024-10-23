@@ -1,5 +1,7 @@
 LazyVim = require("lazyvim.util")
 
+
+-- TODO: Break this out. `tools.lua` is too vague.
 return {
   {
     -- TODO: setup fzy
@@ -19,6 +21,7 @@ return {
         desc = "Find help" },
       { "<leader>fk", function() require("telescope.builtin").keymaps() end,
         desc = "Find keymap" },
+      { "<leader>fd" , function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end, "Grep workspace symbols" },
     },
   },
   {
@@ -169,6 +172,29 @@ return {
         ]],
         },
       },
+    },
+  },
+  {
+    "wsdjeg/vim-fetch",
+    -- disable lazy loading so we can do things like `vim file.txt:123`
+    lazy = false,
+  },
+  {
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+    keys = { -- Example mapping to toggle outline
+      { "<C-s>", "<cmd>Outline<CR>", desc = "Toggle outline" },
+    },
+    opts = {
+      outline_window = {
+        width = 20,
+        show_relative_numbers = true,
+      },
+      keymaps = {
+        up_and_jump = "<C-p>",
+        down_and_jump = "<C-n>",
+      }
     },
   },
 }
