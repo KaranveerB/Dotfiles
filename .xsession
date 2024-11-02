@@ -18,9 +18,14 @@ picom --daemon --backend glx
 
 # lightdm locking
 # light-locker --lock-on-suspend --lock-on-lid 
-xset s 300 300
+#xset s 300 300
 xset +dpms
-xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
+#xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
+
+xset s off
+# TODO: This doesn't work well at all. Dimmer doesn't disappear when moving the mouse.
+xidlehook --not-when-fullscreen --timer 300 '/usr/lib/xsecurelock/dimmer' 'killall dimmer' --timer 5 'xsecurelock' '' &
+
 
 deadd-notification-center &
 # dunst
