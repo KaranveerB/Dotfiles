@@ -26,11 +26,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
-      {
-        "hrsh7th/nvim-cmp",
-        -- tracking: https://github.com/hrsh7th/nvim-cmp/issues/2070
-        commit = "82bd4b59432d44cf5e2a5ce3a40a037a575a6623"
-      },
+      "hrsh7th/nvim-cmp",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
     },

@@ -6,8 +6,8 @@
   "WINDOW_BOUNDS": {
     "x": 0,
     "y": 20,
-    "width": 1536,
-    "height": 844
+    "width": 1805,
+    "height": 1184
   },
   "chromiumSwitches": {},
   "DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING": true,
