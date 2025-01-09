@@ -43,7 +43,7 @@ return {
           "clangd",
           "lua_ls",
           "basedpyright",
-          "ruff_lsp",
+          "ruff",
           "texlab",
           "rust_analyzer",
         },
@@ -71,10 +71,10 @@ return {
             })
           end,
           ["rust_analyzer"] = function() end, -- handled by rustaceanvim
-          ["ruff_lsp"] = function() end, -- joint with basedpyright
+          ["ruff"] = function() end, -- joint with basedpyright
           ["basedpyright"] = function()
-            -- use ruff_lsp
-            require("lspconfig").ruff_lsp.setup({
+            -- use ruff
+            require("lspconfig").ruff.setup({
               capabilities = capabilities,
             })
             require("lspconfig").basedpyright.setup({
@@ -91,6 +91,40 @@ return {
                     ignore = { "*" }, -- using ruff
                     reportUnknownVariableType = false,
                   },
+                },
+              },
+            })
+          end,
+          ["ts_ls"] = function()
+            require("lspconfig").ts_ls.setup({
+              -- Why is this default off!?!?!?
+              settings = {
+                typescript = {
+                  inlayHints = {
+                    includeInlayParameterNameHints = "all",
+                    includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                    includeInlayFunctionParameterTypeHints = true,
+                    includeInlayVariableTypeHints = true,
+                    includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+                    includeInlayPropertyDeclarationTypeHints = true,
+                    includeInlayFunctionLikeReturnTypeHints = true,
+                    includeInlayEnumMemberValueHints = true,
+                  },
+                },
+                javascript = {
+                  inlayHints = {
+                    includeInlayParameterNameHints = "all",
+                    includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                    includeInlayFunctionParameterTypeHints = true,
+                    includeInlayVariableTypeHints = true,
+                    includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+                    includeInlayPropertyDeclarationTypeHints = true,
+                    includeInlayFunctionLikeReturnTypeHints = true,
+                    includeInlayEnumMemberValueHints = true,
+                  },
+                },
+                completions = {
+                  completeFunctionCalls = true,
                 },
               },
             })
@@ -120,7 +154,6 @@ return {
           ["<C-'>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<tab>"] = cmp.mapping.confirm({ select = true }), -- accept currently selected line
-          -- TODO: Currently broken. Think it's cmp messing up here.
           ["<C-;>"] = cmp.mapping.confirm({ select = true }), -- accept currently selected line
 
           ["<C-p>"] = cmp_map(f(cmp.select_prev_item, cmp_select), f(luasnip.jumpable, -1), f(luasnip.jump, -1)),

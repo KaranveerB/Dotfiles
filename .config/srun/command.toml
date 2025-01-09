@@ -21,9 +21,10 @@ xset = { command = "xset r rate 450 60", desc = "redo xset rate" }
 feh = { command = "sh ~/.fehbg", desc = "redo feh" }
 x = { command = "srun res poly; srun res altswap; srun res xset; srun res feh", desc = "multi restart/redo to fix X related issues" }
 
-[rsync]
+[rcl]
 # The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
 sch = { command = "rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s", desc = "mount school drive" }
+obs = { command = "rclone mount crypt-drive:/obsidian/event-log ~/dc/obsidian/event-log --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s", desc = "mount encrypted obsidian drive" }
 
 [git]
 # https://stackoverflow.com/a/21189710
@@ -44,20 +45,3 @@ upg = { command = "zplug install && zplug update && zplug load && zplug clean", 
 [tasker]
 desc = "remotely control phone"
 release-bl = { command = 'curl "https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush?apikey=$(cat ~/.secrets/join.apikey)&deviceNames=S22%20Ultra&text=release-buds-fe&title=Galaxy%20Buds%20FE%20released&category=silently%20notify"', desc = "release galaxy buds fe" }
-
-# TODO: Make this so this can be done locally instead of here
-[l.t]
-# would be nice to pass-though args here
-3 = { command = "python tic-tac-toe.py" }
-4 = { command = "python tic-tac-toe.py 4" }
-5 = { command = "python tic-tac-toe.py 5" }
-
-[l.t.dbg]
-3 = { command = "python -m debugpy --wait-for-client --listen 5678 tic-tac-toe.py" }
-4 = { command = "python -m debugpy --wait-for-client --listen 5678 tic-tac-toe.py 4" }
-5 = { command = "python -m debugpy --wait-for-client --listen 5678 tic-tac-toe.py 5" }
-
-[l.t.run]
-3 = { command = "python tic-tac-toe.py --run" }
-4 = { command = "python tic-tac-toe.py --run 4" }
-5 = { command = "python tic-tac-toe.py --run 5" }

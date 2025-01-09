@@ -24,7 +24,7 @@ xset +dpms
 
 xset s off
 # TODO: This doesn't work well at all. Dimmer doesn't disappear when moving the mouse.
-xidlehook --not-when-fullscreen --timer 300 '/usr/lib/xsecurelock/dimmer' 'killall dimmer' --timer 5 'xsecurelock' '' --timer 3 'systemctl suspend' '' &
+xidlehook --not-when-fullscreen --timer 480 '/usr/lib/xsecurelock/dimmer' 'killall dimmer' --timer 5 'xsecurelock' '' --timer 120 'systemctl suspend' '' &
 
 
 deadd-notification-center &

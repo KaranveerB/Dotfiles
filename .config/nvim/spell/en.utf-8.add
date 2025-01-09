@@ -136,3 +136,9 @@ disjunction
 boolean
 CNF
 #onjuctive
+Benchmarking
+numpy
+traversable
+    The number of expansions of the Monte Carlo tree to perform for each agent before determining the action for each agent.
+backpropogates
+#amedtuple

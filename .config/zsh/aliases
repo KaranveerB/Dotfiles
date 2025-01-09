@@ -5,7 +5,7 @@ alias gcotmp="git checkout tmp"
 alias gbdtmp="git branch -D tmp"
 alias gas="GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash"
 function gasmb() { GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash $(git merge-base HEAD origin/master) }
-function grbmbi() { git rebase -i $(git merge-base HEAD origin/master) }
+function grbmbi() { git rebase -i $(git merge-base HEAD $1) }
 alias mk="make -j$(nproc)"
 #alias mkcc="make -j$(nproc) CC='ccache gcc' CPP='ccache g++' CXX='ccache g++' LD='ccache ld'"
 alias mkcc="make -j$(nproc) CC='ccache gcc' CPP='ccache g++' CXX='ccache g++'"
