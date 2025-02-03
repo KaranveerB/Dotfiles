@@ -1,12 +1,12 @@
 {
   "IS_MAXIMIZED": false,
   "IS_MINIMIZED": false,
-  "MIN_WIDTH": 0,
-  "MIN_HEIGHT": 0,
+  "MIN_WIDTH": 940,
+  "MIN_HEIGHT": 500,
   "WINDOW_BOUNDS": {
-    "x": -3620,
+    "x": 0,
     "y": 20,
-    "width": 1806,
+    "width": 1805,
     "height": 1184
   },
   "chromiumSwitches": {},

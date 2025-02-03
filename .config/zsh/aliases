@@ -129,7 +129,15 @@ alias py="python3"
 alias rsynccp="rsync --archive --modify-window=2 --progress --verbose --itemize-changes --stats --human-readable"
 
 # srun
-alias r="srun"
+r() {
+  output=$(srun --passthrough "$@" 2>&1)
+  if [ $? -eq 125 ]; then
+    eval "$output"
+  else
+    echo "$output"
+  fi
+}
+
 
 # sudo
 ## refresh sudo timeout each time sudo is used

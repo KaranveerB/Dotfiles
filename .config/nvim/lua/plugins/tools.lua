@@ -1,6 +1,5 @@
 LazyVim = require("lazyvim.util")
 
-
 -- TODO: Break this out. `tools.lua` is too vague.
 return {
   {
@@ -194,7 +193,7 @@ return {
       keymaps = {
         up_and_jump = "<C-p>",
         down_and_jump = "<C-n>",
-      }
+      },
     },
   },
 }
