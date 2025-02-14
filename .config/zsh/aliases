@@ -145,7 +145,8 @@ alias sudo="sudo -v; sudo"
 
 # suspend interrupt
 alias inhibitlid="echo 'Ctrl+C to re-enable sleep on lid close' && systemd-inhibit --what=handle-lid-switch sleep 1d"
-alias inhibitsleep="systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target sleep 1d"
+alias inhibitsleep="systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+alias restoresleep="systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 
 # valgrind
 alias qvalgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s "

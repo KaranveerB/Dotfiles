@@ -136,3 +136,17 @@ acyclic
 multithreaded
 prefetch
 multicast
+discriminability
+Olfaction
+olfaction
+unordered
+malloc
+#nvariant
+#inerization
+linearization
+linearizable
+#inearizability
+composable
+linearizability
+serializability
+CAS

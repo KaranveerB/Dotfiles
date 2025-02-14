@@ -19,7 +19,8 @@ poly = { command = "sh ~/.config/polybar/launch.sh", desc = "restart polybar" }
 altswap = { command = "setxkbmap -option altwin:swap_alt_win", desc = "redo alt/win swap" }
 xset = { command = "xset r rate 450 60", desc = "redo xset rate" }
 feh = { command = "sh ~/.fehbg", desc = "redo feh" }
-x = { command = "srun res poly; srun res altswap; srun res xset; srun res feh", desc = "multi restart/redo to fix X related issues" }
+# TODO: This doesn't work well with passthrough. Add aliases to other commands of some sort
+x = { command = "srun res poly; srun res xset; srun res feh", desc = "multi restart/redo to fix X related issues" }
 
 [rcl]
 # The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
