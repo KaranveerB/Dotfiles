@@ -35,3 +35,11 @@ vim.keymap.set('n', '<Leader>q', function() vim.cmd("copen") end, { noremap = tr
 vim.api.nvim_set_keymap('n', '<C-q>', ':cnext<CR>', { noremap = true })
 ---- TODO: not working?
 vim.api.nvim_set_keymap('n', '<C-Shift-q>', ':cprev<CR>', { noremap = true })
+
+
+-- terminal
+vim.api.nvim_set_keymap('t', '<C-space>', [[<C-\><C-n>]], { noremap = true })
+
+-- spell
+vim.api.nvim_set_keymap('n', '<Leader>z', '1z=', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>Z', '[s1z=', { noremap = true })

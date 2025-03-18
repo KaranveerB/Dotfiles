@@ -150,3 +150,17 @@ composable
 linearizability
 serializability
 CAS
+timestamp
+GC
+dequeuer
+enqueuer
+dequeuers
+enqueuers
+backoff
+linearized
+performant
+practiced
+wildcard
+deindividuation
+proc
+#
