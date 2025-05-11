@@ -208,15 +208,11 @@ return {
       server = {
         cmd = function()
           local mason_registry = require("mason-registry")
-          local ra_dir = mason_registry.is_installed("rust-analyzer")
-            and mason_registry.get_package("rust-analyzer"):get_install_path()
-          for name, type in vim.fs.dir(ra_dir) do
-            if type == "file" and vim.startswith(name, "rust-analyzer") then
-              return { ra_dir .. "/" .. name }
-            end
+          if mason_registry.is_installed("rust-analyzer") then
+            return { vim.fn.exepath("rust-analyzer") }
           end
           -- Will likely get other scary errors before you see this, but whatever.
-          LazyVim.error("**rust-analyzer** not found in " .. ra_dir .. ".", { title = "rustaceanvim" })
+          LazyVim.error("**rust-analyzer** not found", { title = "rustaceanvim" })
         end,
         on_attach = function(_, bufnr)
           vim.keymap.set("n", "<localleader>gr", function()
