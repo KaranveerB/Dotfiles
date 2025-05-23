@@ -6,5 +6,7 @@
 
 [includeIf "gitdir:~/proj/arch/"]
 	path = config-archlinux
+[includeIf "gitdir:~/sch/"]
+	path = config-sfu
 [init]
 	defaultBranch = main

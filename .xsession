@@ -20,11 +20,12 @@ picom --daemon --backend glx
 # light-locker --lock-on-suspend --lock-on-lid 
 #xset s 300 300
 xset +dpms
-#xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
+#dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.GetSessionByPID uint32:$$ > /home/lost/README
+#xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock > log 2>&1 &
 
 xset s off
 # TODO: This doesn't work well at all. Dimmer doesn't disappear when moving the mouse.
-xidlehook --not-when-fullscreen --timer 480 '/usr/lib/xsecurelock/dimmer' 'killall dimmer' --timer 5 'xsecurelock' '' --timer 120 'systemctl suspend' '' &
+xidlehook --not-when-fullscreen --detect-sleep --not-when-audio --timer 480 '/usr/lib/xsecurelock/dimmer' 'killall dimmer' --timer 5 'xsecurelock' '' --timer 120 'systemctl suspend' '' &
 
 
 deadd-notification-center &

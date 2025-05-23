@@ -5,6 +5,10 @@ desc = "manage tlp performance configs"
 enable = { command = "sudo mv /etc/tlp.d/11-boost.conf{.disabled,} && sudo tlp start" }
 disable = { command = "sudo mv /etc/tlp.d/11-boost.conf{,.disabled} && sudo tlp start" }
 
+[tlp.boost.gpu]
+enable = { command = "sudo mv /etc/tlp.d/11-gpu-boost.conf{.disabled,} && sudo tlp start" }
+disable = { command = "sudo mv /etc/tlp.d/11-gpu-boost.conf{,.disabled} && sudo tlp start" }
+
 [wl]
 desc = "manage wireless cards"
 man = { command = "sudo iw wlp166s0 set type managed", desc = "set wifi card in managed mode" }
