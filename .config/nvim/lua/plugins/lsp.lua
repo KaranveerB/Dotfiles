@@ -35,7 +35,7 @@ return {
       local cmp = require("cmp")
       local cmp_lsp = require("cmp_nvim_lsp")
       local capabilities =
-        vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
+          vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
 
       require("mason").setup()
       require("mason-lspconfig").setup({
@@ -71,7 +71,7 @@ return {
             })
           end,
           ["rust_analyzer"] = function() end, -- handled by rustaceanvim
-          ["ruff"] = function() end, -- joint with basedpyright
+          ["ruff"] = function() end,          -- joint with basedpyright
           ["basedpyright"] = function()
             -- use ruff
             require("lspconfig").ruff.setup({
@@ -177,25 +177,27 @@ return {
     end,
     -- stylua: ignore
     keys = {
-      { '<C-;>', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, desc = "Enable lsp inlay hints" },
+      { '<C-;>',      function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, desc = "Enable lsp inlay hints" },
       { '<leader>dh', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, desc = "Enable lsp inlay hints" },
       -- definition
-      { '<leader>dd', function() vim.lsp.buf.definition() end, { noremap = true }, desc = "Jump to definition" },
+      { '<leader>dd', function() vim.lsp.buf.definition() end,                                       { noremap = true },             desc = "Jump to definition" },
+      -- implementation
+      { '<leader>di', function() vim.lsp.buf.implementation() end,                                   { noremap = true },             desc = "Jump to implementation" },
       -- actions
-      { '<leader>da', function() vim.lsp.buf.code_action() end, { noremap = true }, desc = "Select a code action" },
+      { '<leader>da', function() vim.lsp.buf.code_action() end,                                      { noremap = true },             desc = "Select a code action" },
       -- format
-      { '<leader>dF', function() vim.lsp.buf.format() end, { noremap = true }, mode = {"n", "v" }, desc = "Format code" },
+      { '<leader>dF', function() vim.lsp.buf.format() end,                                           { noremap = true },             mode = { "n", "v" },                         desc = "Format code" },
       -- select (hover)
-      { '<leader>ds', function() vim.lsp.buf.hover() end, { noremap = true }, desc = "Hover over symbol (x2 to jump into)" },
+      { '<leader>ds', function() vim.lsp.buf.hover() end,                                            { noremap = true },             desc = "Hover over symbol (x2 to jump into)" },
       -- float
-      { '<leader>df', function () vim.diagnostic.open_float() end, { noremap = true }, desc = "Open diagnostic float" },
+      { '<leader>df', function() vim.diagnostic.open_float() end,                                    { noremap = true },             desc = "Open diagnostic float" },
       -- rename
-      { '<leader>dr', function() vim.lsp.buf.rename() end, { noremap = true }, desc = "Rename symbol" },
+      { '<leader>dr', function() vim.lsp.buf.rename() end,                                           { noremap = true },             desc = "Rename symbol" },
       -- diagnostic jumps
-      { '[d', function () vim.diagnostic.goto_prev() end, { noremap = true }, desc = "Go to previous diagnostic" },
-      { ']d', function () vim.diagnostic.goto_next() end, { noremap = true }, desc = "Go to next diagnostic", },
+      { '[d',         function() vim.diagnostic.goto_prev() end,                                     { noremap = true },             desc = "Go to previous diagnostic" },
+      { ']d',         function() vim.diagnostic.goto_next() end,                                     { noremap = true },             desc = "Go to next diagnostic", },
       -- references/usages
-      { 'du', function () vim.lsp.buf.references() end, { noremap = true }, desc = "Find usages", },
+      { 'du',         function() vim.lsp.buf.references() end,                                       { noremap = true },             desc = "Find usages", },
     },
   },
   {
@@ -250,14 +252,14 @@ return {
   {
     "folke/trouble.nvim",
     cmd = "Trouble",
-      -- stylua: ignore
+    -- stylua: ignore
     keys = {
-      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
-      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
-      { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)" },
+      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>",                        desc = "Diagnostics (Trouble)" },
+      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",           desc = "Buffer Diagnostics (Trouble)" },
+      { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>",                desc = "Symbols (Trouble)" },
       { "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)" },
-      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
-      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>",                            desc = "Location List (Trouble)" },
+      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>",                             desc = "Quickfix List (Trouble)" },
     },
     opts = {},
   },

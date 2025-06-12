@@ -1,5 +1,10 @@
 test = { command = "echo hello | grep hello" }
 
+[tlp.freq]
+lock = { command = "sudo mv /etc/tlp.d/12-cpu-locked-freq.conf{.disabled,} && sudo tlp start" }
+unlock = { command = "sudo mv /etc/tlp.d/12-cpu-locked-freq.conf{,.disabled} && sudo tlp start" }
+
+
 [tlp.boost]
 desc = "manage tlp performance configs"
 enable = { command = "sudo mv /etc/tlp.d/11-boost.conf{.disabled,} && sudo tlp start" }
@@ -28,7 +33,7 @@ x = { command = "srun res poly; srun res xset; srun res feh", desc = "multi rest
 
 [rcl]
 # The reason for verbose is because this is usually runs in its own terminal (for indefinite period of time)
-sch = { command = "rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s", desc = "mount school drive" }
+sch = { command = "rclone mount drive:/School ~/sch/drive/ --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 10s", desc = "mount school drive" }
 obs = { command = "rclone mount crypt-drive:/obsidian/event-log ~/dc/obsidian/event-log --vfs-cache-mode full --verbose --poll-interval 5m --vfs-write-back 30s", desc = "mount encrypted obsidian drive" }
 
 [git]

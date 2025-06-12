@@ -33,8 +33,8 @@ vim.keymap.set('n', '<Leader>Q', function() vim.cmd("botright cclose") end, { no
 vim.keymap.set('n', '<Leader>q', function() vim.cmd("copen") end, { noremap = true })
 ---- TODO: Lua
 vim.api.nvim_set_keymap('n', '<C-q>', ':cnext<CR>', { noremap = true })
----- TODO: not working?
-vim.api.nvim_set_keymap('n', '<C-Shift-q>', ':cprev<CR>', { noremap = true })
+--vim.api.nvim_set_keymap('n', '<C-S-q>', ':cprev<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-Q>', ':cprev<CR>', { noremap = true })
 
 
 -- terminal

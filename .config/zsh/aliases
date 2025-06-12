@@ -31,12 +31,16 @@ alias blacon="bluetoothctl power on && bluetoothctl connect" # meant to be used 
 alias blctl="bluetoothctl"
 alias blup="bluetoothctl power on"
 
+# cd + ls
+function cdl() { cd $1 && ls }
+
 # clean make
 alias sudoclm="make clean && sudo make install"
 alias clm="make clean install"
 
-# cd + ls
-function cdl() { cd $1 && ls }
+# run on e-core/p-core
+ecore() { taskset -c "$(cat /sys/devices/cpu_atom/cpus)" "$@" }
+pcore() { taskset -c "$(cat /sys/devices/cpu_core/cpus)" "$@" }
 
 # {{{ dwm
 # dwmblocks
