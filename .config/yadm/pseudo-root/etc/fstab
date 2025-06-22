@@ -11,6 +11,9 @@
 /dev/mapper/cryptroot	/home/lost/.local	btrfs	rw,noatime,ssd,space_cache=v2,compress=zstd:1,subvolid=1600,subvol=/@homelocal	0 0
 
 # /dev/mapper/cryptroot
+/dev/mapper/cryptroot	/home/lost/games		btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:3,subvolid=8395,subvol=/@games	0 0
+
+# /dev/mapper/cryptroot
 /dev/mapper/cryptroot	/var/cache	btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:2,subvolid=261,subvol=/@varcache	0 0
 
 # /dev/mapper/cryptroot
@@ -24,6 +27,7 @@
 
 # /dev/mapper/cryptroot
 /dev/mapper/cryptroot	/swap		btrfs		rw,noatime,ssd,space_cache=v2,nodatacow,compress=zstd:no,subvolid=259,subvol=/@swap	0 0
+
 
 # /dev/nvme0n1p2
 UUID="328a26b1-50b4-480a-be38-2ad37477035a" /boot	ext4		rw,noatime	0 2
