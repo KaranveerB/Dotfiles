@@ -17,10 +17,13 @@ android-tools
 arandr
 arch-install-scripts
 arduino-cli
+aria2
+asciiquarium
 audacity
 audiorelay
 auto-cpufreq
 autorandr
+axel
 base
 base-devel
 bashtop
@@ -119,7 +122,6 @@ hotspot
 hwinfo
 hyperv
 i2c-tools
-i7z
 imagemagick
 inkscape
 intel-gpu-tools
@@ -226,11 +228,11 @@ pyenv
 python-debugpy
 python-pandas
 python-pip
-python-pipenv
 python-pipx
 python-pytest
 python-pyxdg
 python-seaborn
+python-uv
 qalculate-qt
 qbittorrent
 qemu-base
@@ -242,6 +244,7 @@ qt6-languageserver
 radare2
 ranger
 rclone
+redshift-minimal
 refind
 ripgrep
 river
@@ -294,12 +297,12 @@ tlp
 tlp-rdw
 tmon
 tmux
+toxcore
 traceroute
 tree
 ttf-anonymous-pro
 ttf-bitstream-vera
 ttf-dejavu
-ttf-font-awesome
 ttf-jetbrains-mono
 ttf-material-symbols-variable-git
 ttf-nerd-fonts-symbols
@@ -312,6 +315,7 @@ unrar
 unzip
 usbip
 valgrind
+vbindiff
 ventoy-bin
 vim
 virt-manager
@@ -329,6 +333,7 @@ wireguard-tools
 wireless_tools
 wireshark-qt
 wlroots0.18
+woff2-font-awesome
 x86_energy_perf_policy
 xclip
 xdotool

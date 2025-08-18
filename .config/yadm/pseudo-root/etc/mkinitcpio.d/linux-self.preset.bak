@@ -5,7 +5,7 @@
 ALL_kver="/boot/vmlinuz-self"
 microcode=(/boot/*-ucode.img)
 
-PRESETS=('default')
+#PRESETS=('default')
 
 #default_config="/etc/mkinitcpio.conf"
 default_image="/boot/initramfs-self.img"

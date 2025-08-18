@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO: This can be improved in many ways to make syncing entire directories much better
+# honestly, I don't know why I did it the way I did.
+
 sync() {
   # 1: directory, 2: target name (dir or file)
   if [ -e "$1/$2" ]; then
@@ -67,11 +70,14 @@ sync "/etc/systemd/system" "btrbk.service"
 sync "/etc/systemd/system" "touchpad-smp-affinity.service"
 sync "/etc/systemd/system" "fw-fanctrl.service"
 sync "/etc/systemd/system" "tlpnoboost.service"
+sync "/etc/systemd/user" "atr2100x-easyeffects.service"
 sync_etc "mkinitcpio.d"
 sync_etc "btrbk"
 sync "/etc/systemd" "logind.conf.d"
 sync "/etc/systemd" "sleep.conf.d"
 sync "/etc/udev/rules.d" "99-lowbat.rules"
+sync "/etc/udev/rules.d" "99-atr2100x-easyeffects.rules"
+sync "/etc/udev/rules.d" "99-backlight.rules"
 
 # pacman
 pacman -Qqen > "extras/native-pkg.list" # includes chaotic-aur

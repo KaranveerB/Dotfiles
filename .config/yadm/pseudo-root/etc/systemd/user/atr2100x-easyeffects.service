@@ -1,0 +1,9 @@
+[Unit]
+Description=Start Easy Effects in the background
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/easyeffects
+ExecStartPost=/usr/bin/notify-send "Easy Effects" "Started successfully"
+Environment=DISPLAY=:0

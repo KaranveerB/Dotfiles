@@ -1,0 +1,5 @@
+# start Easy Effects when ATR2100x is connected
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0909", ATTRS{idProduct}=="004d", \
+  # check if GUI session present (doesn't work for wayland)
+  TEST=="/tmp/.X11-unix/X0", \
+  TAG+="systemd", ENV{SYSTEMD_USER_WANTS}="atr2100x-easyeffects.service"

@@ -108,7 +108,7 @@ alias clearpico="rm -rf ~/dc/ctf/pico/*"
 alias startpicom="picom --daemon"
 
 # pipe-viewer
-alias pv="pipe-viewer --audio"
+#alias pv="pipe-viewer --audio"
 
 # {{{ polybar
 function polyhook() { 

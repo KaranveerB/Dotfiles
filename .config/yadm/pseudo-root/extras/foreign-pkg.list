@@ -22,9 +22,9 @@ fcitx5-skin-arc
 fw-ectool-git
 fw-fanctrl
 galaxybudsclient-bin
+i7z
 ida-free
 imagewriter
-jmc-adoptium
 jmtpfs
 kingston_fw_updater
 linux-router
@@ -40,10 +40,12 @@ perf-tools-git
 polybar-dwm-module
 powerstat
 pycdc-git
+python-angr
 python-ipdb
 python-pygmsh
 rivercarro
 rshell
+samtools
 selectdefaultapplication-git
 siji-ng
 simplescreenrecorder

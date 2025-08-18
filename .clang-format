@@ -1,1 +1,5 @@
 BreakTemplateDeclarations: Yes
+PointerAlignment: Left
+IndentCaseLabels: true
+ContinuationIndentWidth: 4
+AlignAfterOpenBracket: DontAlign
