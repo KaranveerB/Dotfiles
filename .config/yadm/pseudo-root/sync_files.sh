@@ -82,3 +82,7 @@ sync "/etc/udev/rules.d" "99-backlight.rules"
 # pacman
 pacman -Qqen > "extras/native-pkg.list" # includes chaotic-aur
 pacman -Qqem > "extras/foreign-pkg.list"
+
+# systemd
+systemctl list-unit-files --type=service --state=enabled --no-legend | awk '{print $1}' > "extras/systemd-enabled.list"
+systemctl list-unit-files --type=service --state=disabled --no-legend | awk '{print $1}' > "extras/systemd-disabled.list"
