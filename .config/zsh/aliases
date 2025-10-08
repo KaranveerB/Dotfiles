@@ -132,9 +132,9 @@ alias py="python3"
 # https://www.reddit.com/r/linuxquestions/comments/ne9vno/comment/gyfd0ps/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 alias rsynccp="rsync --archive --modify-window=2 --progress --verbose --itemize-changes --stats --human-readable"
 
-# srun
+# xrun
 r() {
-  output=$(srun --passthrough "$@" 2>&1)
+  output=$(xrun --passthrough "$@" 2>&1)
   if [ $? -eq 125 ]; then
     eval "$output"
   else
@@ -198,7 +198,7 @@ alias czsh="cd ~/.config/zsh/"
 alias vali="$EDITOR ~/.config/zsh/aliases"
 alias vpoly="$EDITOR ~/.config/polybar/"
 alias vpico="$EDITOR ~/.config/picom/picom.conf"
-alias vsrun="$EDITOR ~/.config/srun/command.toml"
+alias vxrun="$EDITOR ~/.config/xrun/command.toml"
 alias vterm="$EDITOR ~/.config/kitty/kitty.conf"
 alias vvim="$EDITOR ~/.config/nvim/"
 alias vzenv="$EDITOR ~/.config/zsh/zshenv"

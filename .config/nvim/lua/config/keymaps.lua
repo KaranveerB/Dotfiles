@@ -6,6 +6,9 @@ vim.keymap.set("i", "<C-j>", "<Down>", { noremap = true })
 vim.keymap.set("i", "<C-k>", "<Up>", { noremap = true })
 vim.keymap.set("i", "<C-l>", "<Right>", { noremap = true })
 
+-- enter key. C-M is the control code for carriage return
+vim.keymap.set('n', '<Space><CR>', '<C-M>')
+
 --[[ this is done in a different way in lua/plugins/movement.lua
 vim.keymap.set('n', '<C-h>', '<C-w>h',  {noremap = true})
 vim.keymap.set('n', '<C-j>', '<C-w>j',  {noremap = true})

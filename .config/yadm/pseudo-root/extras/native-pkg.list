@@ -50,6 +50,7 @@ btrbk
 btrfs-progs
 ca-certificates
 caffeine
+cargo-edit
 ccache
 chaotic-keyring
 chaotic-mirrorlist
@@ -107,7 +108,6 @@ glade
 glow
 gmsh-bin
 gmtp
-gnu-netcat
 gobject-introspection
 gparted
 gpick

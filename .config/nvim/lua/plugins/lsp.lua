@@ -47,6 +47,11 @@ return {
           "texlab",
           "rust_analyzer",
         },
+        automatic_enable = {
+          exclude = {
+            "rust_analyzer",
+          },
+        },
         handlers = {
           function(server_name) -- default handler
             require("lspconfig")[server_name].setup({
@@ -70,7 +75,6 @@ return {
               inlay_hints = { enabled = true },
             })
           end,
-          ["rust_analyzer"] = function() end, -- handled by rustaceanvim
           ["ruff"] = function() end,          -- joint with basedpyright
           ["basedpyright"] = function()
             -- use ruff
@@ -209,6 +213,9 @@ return {
     opts = {
       server = {
         cmd = function()
+          -- TODO: There isn't a strong reason to use mason's rust-analyzer.
+          -- Maybe just use systems cus rust-analyzer comes with rustup anyways
+          -- (on arch at least).
           local mason_registry = require("mason-registry")
           if mason_registry.is_installed("rust-analyzer") then
             return { vim.fn.exepath("rust-analyzer") }

@@ -20,13 +20,13 @@
 /dev/mapper/cryptroot	/var/log	btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:2,subvolid=262,subvol=/@varlog	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/var/tmp	btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:no,subvolid=263,subvol=/@vartmp	0 0
+/dev/mapper/cryptroot	/var/tmp	btrfs		rw,noatime,ssd,space_cache=v2,compress=no,subvolid=263,subvol=/@vartmp	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/.snapshots	btrfs		rw,noatime,ssd,space_cache=v2,compress=zstd:no,subvolid=258,subvol=/@snapshots	0 0
+/dev/mapper/cryptroot	/.snapshots	btrfs		rw,noatime,ssd,space_cache=v2,compress=no,subvolid=258,subvol=/@snapshots	0 0
 
 # /dev/mapper/cryptroot
-/dev/mapper/cryptroot	/swap		btrfs		rw,noatime,ssd,space_cache=v2,nodatacow,compress=zstd:no,subvolid=259,subvol=/@swap	0 0
+/dev/mapper/cryptroot	/swap		btrfs		rw,noatime,ssd,space_cache=v2,nodatacow,compress=no,subvolid=259,subvol=/@swap	0 0
 
 
 # /dev/nvme0n1p2

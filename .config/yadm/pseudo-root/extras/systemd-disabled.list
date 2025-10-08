@@ -84,6 +84,7 @@ sudo_logsrvd.service
 svnserve.service
 sysstat.service
 systemd-boot-check-no-failures.service
+systemd-boot-clear-sysfail.service
 systemd-boot-update.service
 systemd-confext.service
 systemd-homed-activate.service
@@ -105,7 +106,9 @@ systemd-pstore.service
 systemd-resolved.service
 systemd-sysext.service
 systemd-time-wait-sync.service
+systemd-tpm2-clear.service
 systemd-udev-load-credentials.service
+systemd-userdb-load-credentials.service
 systemd-vmspawn@.service
 thermald.service
 tox-bootstrapd.service
